@@ -1,0 +1,10 @@
+
+.text{
+  text-align: center;
+}
+
+.liji{
+  width: 20rem;
+  
+  text-align: center;
+}
