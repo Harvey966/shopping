@@ -10,21 +10,7 @@ Page({
 
   },
   onLoad(){
-    let access_token;
-    wx.cloud.callFunction({
-      name:'getsecret',
-    }).then(res=>{
-      access_token = JSON.parse(res.result).access_token
-      console.log("第一个函数：",res)
-      wx.cloud.callFunction({
-        name:"getlist",
-        data:{
-          access_token
-        }
-      }).then(res2=>{
-        console.log("第二个函数：",res2)
-      })
-    })
+    
     
     
   },
@@ -37,8 +23,8 @@ Page({
   linkToType(e){
     const productId = [51699172] // 填写具体的商品Id
     wx.navigateTo({
-
+      
       url: `plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=${productId}`,
-});
+    });
   }
 })

@@ -9,7 +9,7 @@
       </block>
   </swiper>
   <view class="title">
-    <text >精选主题</text>
+    <text >商品推荐</text>
   </view>
   <view class="theme">
     <view class="one">

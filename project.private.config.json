@@ -19,8 +19,8 @@
           "query": ""
         },
         {
-          "name": "pages/select/select",
-          "pathName": "pages/select/select",
+          "name": "pages/goods/goods",
+          "pathName": "pages/goods/goods",
           "query": "",
           "scene": null
         }

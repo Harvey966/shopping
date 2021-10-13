@@ -1,0 +1,48 @@
+
+<view class="goods-container">
+  <swiper indicator-dots="ture"
+        autoplay="false"  >
+        <block wx:for="{{image}}"  wx:key="*this" >
+          <swiper-item bindtap="clickImg" data-index="{{index}}">
+            <image src="{{item}}" class="swiper-image"></image>
+          </swiper-item>
+      </block>
+  </swiper>
+
+  <view class="goods-car">
+    <view class="money-title">
+      <view class="now-price">￥0.01</view>
+      <view class="old-price">1244</view>
+    </view>
+    <view class="zhiying">小哲商店|直营</view>
+    <view class="title">
+      锂电池踏板车便携电动代步车
+    </view>
+  </view>
+  <view class="send-container">
+    <view class="send-left">
+      发货
+    </view>
+    <view class="send-right">
+      <view class="right-title">快递-河南省发货</view>
+      <view class="right-content">付款后24效时发货</view>
+    </view>
+  </view>
+
+  <view class="nav-container">
+    <view class="nav-icon">
+      <view class="icon-container">
+        <image class="icon" src="../../images/goods/shop.png"></image>
+        <view class="icon-text">店铺</view>
+      </view>
+      <view class="icon-container">
+        <image class="icon"  src="../../images/goods/service.png"></image>
+        <view class="icon-text">客服</view>
+      </view>
+    </view>
+    <view class="buy-button">
+      立即购买
+    </view>
+  </view>
+</view>
+
