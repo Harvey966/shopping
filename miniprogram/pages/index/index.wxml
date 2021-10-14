@@ -8,63 +8,22 @@
           </swiper-item>
       </block>
   </swiper>
+
   <view class="title">
     <text >商品推荐</text>
   </view>
-  <view class="theme">
-    <view class="one">
-      <image bindtap="linkToType" data-index="{{3}}" src="https://gtms01.alicdn.com/tps/i1/TB1r4h8JXXXXXXoXXXXvKyzTVXX-520-280.jpg"></image>
-    </view>
-  </view>
-  <view class="title">
-    <text >热销商品</text>
-  </view>
   <view class="goods-container">
-    <view class="goods_item">
+    <view 
+      class="goods_item" 
+      bindtap="linkToGoods" 
+      wx:for="{{goods}}" 
+      data-index="{{index}}"
+      wx:key="index"
+    >
       <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/560760057/O1CN01kdjCn81CI9G25a1rC_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>小新pro16</text>
-      <text class="goods_pirce">￥ 6388</text>
-    </view>
-    <view class="goods_item">
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i1/17872895/O1CN01DQKWI21XFxJPHTm0n_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>拯救者R7000</text>
-      <text class="goods_pirce">￥ 6498</text>
+      <text>{{item.title}}</text>
+      <text class="goods_pirce">￥ {{item.now_price}}</text>
     </view>
   </view>
-  <view class="goods-container">
-    <view class="goods_item">
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i3/1071960168/O1CN01Nk8arr1D6z8ioMOBH_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>惠普暗影精灵6</text>
-      <text class="goods_pirce">￥ 5899</text>
-    </view>
-    <view class="goods_item">
-      <image src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i4/1714128138/O1CN01g2AMIU29zFsonGlKS_!!0-item_pic.jpg_360x360Q90.jpg_.webp"></image>
-      <text>小米笔记本Pro15</text>
-      <text class="goods_pirce">￥ 6499</text>
-    </view>
-  </view>
-  <view class="goods-container">
-    <view class="goods_item">
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/560760057/O1CN01kdjCn81CI9G25a1rC_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>小新pro16</text>
-      <text class="goods_pirce">￥ 6388</text>
-    </view>
-    <view class="goods_item">
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i1/17872895/O1CN01DQKWI21XFxJPHTm0n_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>拯救者R7000</text>
-      <text class="goods_pirce">￥ 6498</text>
-    </view>
-  </view>
-  <view class="goods-container">
-    <view class="goods_item">
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i3/1071960168/O1CN01Nk8arr1D6z8ioMOBH_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
-      <text>惠普暗影精灵6</text>
-      <text class="goods_pirce">￥ 5899</text>
-    </view>
-    <view class="goods_item">
-      <image src="https://g-search3.alicdn.com/img/bao/uploaded/i4/i4/1714128138/O1CN01g2AMIU29zFsonGlKS_!!0-item_pic.jpg_360x360Q90.jpg_.webp"></image>
-      <text>小米笔记本Pro15</text>
-      <text class="goods_pirce">￥ 6499</text>
-    </view>
-  </view>
+
 </view>

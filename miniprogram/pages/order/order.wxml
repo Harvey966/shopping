@@ -1,10 +1,10 @@
 
 
 <view class="order-container">
-  <view class="address">
+  <view class="address" bindtap="linktoAddress">
     <image class="icon icon-left" src="../../images/order/位置.png"></image>
     <view class="detail">
-      <view class="name">魏航宇 15703886556</view>
+      <view class="name">魏航宇 1570388xxxx</view>
       <view class="detail-address">北京市海淀区滴滴大厦</view>
     </view>
     <image class="icon icon-right" src="../../images/order/右箭头.png"></image>
@@ -16,15 +16,15 @@
       <view class="title">平衡车-立即付款</view>
       <view class="price-count">
         <view class="price">￥0.01</view>
-        <view class="count">*1</view>
+        <view class="count">*{{count}}</view>
       </view>
     </view>
     <view class="card-count">
       <view class="count-title">购买数量</view>
       <view class="add-container">
-        <view class="reduce type">-</view>
-        <view class="count-title2">1</view>
-        <view class="add type">+</view>
+        <view class="reduce type" bindtap="reduce_count">-</view>
+        <view class="count-title2">{{count}}</view>
+        <view class="add type" bindtap="add_count">+</view>
       </view>
     </view>
     <view class="card-kuaidi">

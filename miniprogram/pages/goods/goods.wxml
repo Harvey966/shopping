@@ -11,12 +11,12 @@
 
   <view class="goods-car">
     <view class="money-title">
-      <view class="now-price">￥0.01</view>
-      <view class="old-price">1244</view>
+      <view class="now-price">￥{{good.now_price}}</view>
+      <view class="old-price">{{good.old_price}}</view>
     </view>
     <view class="zhiying">小哲商店|直营</view>
     <view class="title">
-      锂电池踏板车便携电动代步车
+      {{good.title}}
     </view>
   </view>
   <view class="send-container">
@@ -31,7 +31,7 @@
 
   <view class="nav-container">
     <view class="nav-icon">
-      <view class="icon-container">
+      <view class="icon-container" bindtap="linkToIndex">
         <image class="icon" src="../../images/goods/shop.png"></image>
         <view class="icon-text">店铺</view>
       </view>
@@ -43,7 +43,7 @@
     <view class="shop-button">
       加入购物车
     </view>
-    <view class="buy-button">
+    <view class="buy-button" bindtap="linkToOrder">
       立即购买
     </view>
   </view>

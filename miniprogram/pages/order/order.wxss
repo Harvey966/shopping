@@ -58,7 +58,7 @@
   font-size: 40rpx;
 }
 .title{
-  margin-left: -200rpx;
+  margin-left: 10rpx;
 }
 .card-count{
   margin-top: 30rpx;

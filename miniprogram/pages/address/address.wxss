@@ -19,7 +19,13 @@
   padding: 20rpx;
   padding-left: 40rpx;
   padding-right: 40rpx;
-  width: 100rpx;
+  width: 400rpx;
   background-color: orange;
   margin: 0 auto;
+  box-sizing: border-box;
+  margin: 40rpx 175rpx 10rpx 175rpx;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 20rpx;
+
 }

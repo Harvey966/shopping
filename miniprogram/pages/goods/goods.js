@@ -12,12 +12,30 @@ Component({
    */
   data: {
     image:['../../images/index/1.jpg','../../images/index/2.jpg','../../images/index/3.jpg'],
+    good:{}
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
-  }
+    linkToOrder(){
+      wx.navigateTo({
+        url: '../order/order',
+      })
+    },
+    linkToIndex(){
+      wx.navigateBack();
+    },
+    onLoad(option){
+      console.log(option);
+      this.setData({
+        good:getApp().globalData.goods[option.index]
+      },res=>{
+        console.log(this.data.good);
+      })
+      
+    }
+  },
+  
 })

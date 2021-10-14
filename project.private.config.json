@@ -19,8 +19,8 @@
           "query": ""
         },
         {
-          "name": "pages/goods/goods",
-          "pathName": "pages/goods/goods",
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
           "query": "",
           "scene": null
         },
