@@ -40,6 +40,9 @@
         <view class="icon-text">客服</view>
       </view>
     </view>
+    <view class="shop-button">
+      加入购物车
+    </view>
     <view class="buy-button">
       立即购买
     </view>

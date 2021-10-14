@@ -1,0 +1,28 @@
+
+<view class="address-container">
+  <view class="container">
+    <view class="left">联系人</view>
+    <input placeholder="姓名"/>
+  </view>
+
+  <view class="container">
+    <view class="left">手机号码</view>
+    <input placeholder="手机号码"/>
+  </view>
+
+  <view class="container">
+    <view class="left">地区信息</view>
+    <input placeholder="地区信息"/>
+  </view>
+
+  <view class="container">
+    <view class="left">详细地址</view>
+    <input placeholder="街道门牌信息"/>
+  </view>
+
+  <view class="container">
+    <view class="left">邮政编码</view>
+    <input placeholder="邮政编码"/>
+  </view>
+  <view class="save">保存</view>
+</view>

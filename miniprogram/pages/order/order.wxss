@@ -1,0 +1,151 @@
+.order-container{
+  width: 100vh;
+  background-color: rgb(230, 230, 230);
+  height: 100vh;
+}
+.address{
+  display: flex;
+  width: 712rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin-left: 19rpx;
+  margin-right: 19rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  
+}
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+.icon-right{
+  position: absolute;
+  right: 100rpx;
+  top: 50rpx;
+}
+
+.icon-left{
+  margin-right: 20rpx;
+}
+
+.order-card{
+  width: 712rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin-left: 19rpx;
+  margin-right: 19rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+.image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.card-title{
+  display: flex;
+  justify-content: space-between;
+}
+.count{
+  font-size: 30rpx;
+  color: rgb(163, 159, 159);
+  position: absolute;
+  right: 50rpx;
+}
+.price{
+  font-weight: 700;
+  font-size: 40rpx;
+}
+.title{
+  margin-left: -200rpx;
+}
+.card-count{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.add-container{
+  display: flex;
+}
+.count-title{
+  color: rgb(196, 194, 194);
+}
+.type{
+  width:40rpx;
+  height: 40rpx;
+  background-color: #ebe7e7;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.reduce{
+  margin-right: 40rpx;
+
+}
+.add{
+  margin-left: 40rpx;
+}
+
+.card-kuaidi,.card-all{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.kuaidi-title{
+  color: rgb(196, 194, 194);
+}
+
+.card-youhui{
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: rgb(214, 211, 211) solid 1rpx;
+}
+.youhui-title,.youhui-right{
+  color: rgb(196, 194, 194);
+}
+.remarks-container{
+  width: 712rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin-left: 19rpx;
+  margin-right: 19rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+.buy-bottom{
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  border-top: rgb(235, 232, 232) 3.7rpx solid;
+  display: flex;
+  width: 100%;
+  padding: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.buy-left{
+  display: flex;
+}
+.total-money{
+  font-size: 40rpx;
+  color: orange;
+}
+.buy-button{
+  color: #ffffff;
+  width: 120rpx;
+  border-radius: 20rpx;
+  background-color: #ee722a;
+  text-align: center;
+  padding: 20rpx;
+  margin-right: 40rpx;
+}
+.buy-content{
+  margin-top: 12rpx;
+}

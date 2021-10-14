@@ -1,0 +1,68 @@
+
+
+<view class="order-container">
+  <view class="address">
+    <image class="icon icon-left" src="../../images/order/位置.png"></image>
+    <view class="detail">
+      <view class="name">魏航宇 15703886556</view>
+      <view class="detail-address">北京市海淀区滴滴大厦</view>
+    </view>
+    <image class="icon icon-right" src="../../images/order/右箭头.png"></image>
+  </view>
+
+  <view class="order-card">
+    <view class="card-title">
+      <image src="../../images/order/平衡车.jpg" class="image"></image>
+      <view class="title">平衡车-立即付款</view>
+      <view class="price-count">
+        <view class="price">￥0.01</view>
+        <view class="count">*1</view>
+      </view>
+    </view>
+    <view class="card-count">
+      <view class="count-title">购买数量</view>
+      <view class="add-container">
+        <view class="reduce type">-</view>
+        <view class="count-title2">1</view>
+        <view class="add type">+</view>
+      </view>
+    </view>
+    <view class="card-kuaidi">
+      <view class="kuaidi-title">
+        邮费
+      </view>
+      <view class="kuaidi-money">
+        ￥0.00
+      </view>
+    </view>
+    <view class="card-youhui">
+      <view class="youhui-title">
+        店铺优惠
+      </view>
+      <view class="youhui-right">
+        没有可用的优惠
+      </view>
+    </view>
+    <view class="card-all">
+      <view class="youhui-title">
+        订单总金额
+      </view>
+      <view class="all-right">
+        ￥29.99
+      </view>
+    </view>
+
+  </view>
+  <view class="remarks-container">
+    <view class="remarks-right">
+      <input placeholder="选填：备注"/>
+    </view>
+  </view>
+  <view class="buy-bottom">
+    <view class="buy-left">
+      <view class="buy-content">合计</view>
+      <view class="total-money">￥29.99</view>
+    </view>
+    <view class="buy-button">下单</view>
+  </view>
+</view>

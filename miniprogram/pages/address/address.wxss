@@ -1,0 +1,25 @@
+/* pages/address/address.wxss */
+.address-container{
+  width: 100vh;
+}
+.container{
+  display: flex;
+  width: 712rpx;
+  margin-left: 19rpx;
+  margin-right: 19rpx;
+  padding: 20rpx;
+  border-bottom: 2rpx rgb(230, 225, 225) solid;
+}
+
+.left{
+  width: 200rpx;
+}
+
+.save{
+  padding: 20rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  width: 100rpx;
+  background-color: orange;
+  margin: 0 auto;
+}

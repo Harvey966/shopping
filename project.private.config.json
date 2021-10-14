@@ -23,6 +23,12 @@
           "pathName": "pages/goods/goods",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/address/address",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
         }
       ]
     }
