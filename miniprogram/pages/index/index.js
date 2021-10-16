@@ -35,16 +35,32 @@ Page({
     }).then(res=>{
       openid=res.result.openid;
     })
-    console.log(openid);
+    let flag=true;
     await db.collection("user").where({
       _openid:openid
     }).get().then(res=>{
       if(res.data.length===0){
         console.log("没有找到");
-
+        flag=false;
       }
     })
-
+    const demo = {
+        shopcar_List:[],//购物车商品列表
+        delivery_address:{},//收货地址
+        daifukuan:[],//待付款
+        daifahuo:[],//代发货
+        yifahuo:[],//已发货
+        yiwancheng:[]//已完成
+    }
+    if(!flag){
+      app.globalData.user=demo
+      await db.collection("user").add({
+        data:demo
+      })
+    }
+    else {
+      console.log("找到了");
+    }
 
   },
 

@@ -17,7 +17,16 @@ App({
     }
     
     this.globalData = {
-      goods:[]
+      goods:[],
+      user:{
+        _openid:'',
+        shopcar_List:[],//购物车商品列表
+        delivery_address:{},//收货地址
+        daifukuan:[],//待付款
+        daifahuo:[],//代发货
+        yifahuo:[],//已发货
+        yiwancheng:[]//已完成
+      }
     }
   }
 })
