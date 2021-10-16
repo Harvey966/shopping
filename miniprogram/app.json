@@ -25,10 +25,10 @@
         "selectedIconPath": "./images/icon/index_aictive.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/shopcar/shopcar",
         "text": "购物车",
-        "iconPath": "./images/icon/index.png",
-        "selectedIconPath": "./images/icon/index_aictive.png"
+        "iconPath": "./images/icon/car.png",
+        "selectedIconPath": "./images/icon/car_aictive.png"
       },
       {
         "pagePath": "pages/myself/myself",

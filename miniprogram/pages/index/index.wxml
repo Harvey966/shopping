@@ -20,10 +20,10 @@
       data-index="{{index}}"
       wx:key="index"
     >
-      <image src="https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/560760057/O1CN01kdjCn81CI9G25a1rC_!!0-saturn_solar.jpg_360x360Q90.jpg_.webp"></image>
+      <image src="{{item.images[0]}}"></image>
       <text>{{item.title}}</text>
       <text class="goods_pirce">￥ {{item.now_price}}</text>
     </view>
   </view>
-
+  <button bindtap="clickBtn">上传</button>
 </view>

@@ -28,13 +28,12 @@ Component({
       wx.navigateBack();
     },
     onLoad(option){
-      console.log(option);
+      
       this.setData({
         good:getApp().globalData.goods[option.index]
       },res=>{
         console.log(this.data.good);
       })
-      
     }
   },
   

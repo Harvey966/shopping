@@ -10,8 +10,9 @@ Page({
     goods:[]
 
   },
+   
   onLoad(){
-
+    //获取商品列表
     db.collection('goods').where({
       status:1
     }).get().then(res=>{
@@ -21,9 +22,31 @@ Page({
       app.globalData.goods=res.data
     })
     
+    //登陆信息
+    this.onLoadLogin()
     
   },
   
+  //判断有没有找到这个用户，若没有，则新建它的数据
+  async onLoadLogin(){
+    let openid="";
+    await wx.cloud.callFunction({
+      name:"login"
+    }).then(res=>{
+      openid=res.result.openid;
+    })
+    console.log(openid);
+    await db.collection("user").where({
+      _openid:openid
+    }).get().then(res=>{
+      if(res.data.length===0){
+        console.log("没有找到");
+
+      }
+    })
+
+
+  },
 
   clickImg(event){
     console.log(event.currentTarget.dataset.index)//代表点击的第几张图片
@@ -41,6 +64,24 @@ Page({
     
     wx.navigateTo({
       url:"../goods/goods?index="+e.currentTarget.dataset.index
+    })
+  },
+  clickBtn(){
+    db.collection("goods").add(
+      {
+        data:{
+          "title": "溜冰鞋滑板车",
+          "now_price": 123,
+          "old_price": 999,
+          "images": ["cloud://cloud1-8gwbqvbh5c0a5f20.636c-cloud1-8gwbqvbh5c0a5f20-1307542532/平衡车.jpg"],
+          "count": 999,
+          "status": 1,
+          "banner": 0
+        }
+      }
+
+    ).then(res=>{
+      console.log(res)
     })
   }
 })

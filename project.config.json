@@ -35,9 +35,9 @@
     "packNpmRelationList": [],
     "minifyWXSS": true,
     "disableUseStrict": false,
+    "minifyWXML": true,
     "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "appid": "wx5f2a9fed128cac96",
   "projectname": "%E5%B0%8F%E5%95%86%E5%9F%8E",

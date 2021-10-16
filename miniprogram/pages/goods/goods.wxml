@@ -2,7 +2,7 @@
 <view class="goods-container">
   <swiper indicator-dots="ture"
         autoplay="false"  >
-        <block wx:for="{{image}}"  wx:key="*this" >
+        <block wx:for="{{good.images}}"  wx:key="*this" >
           <swiper-item bindtap="clickImg" data-index="{{index}}">
             <image src="{{item}}" class="swiper-image"></image>
           </swiper-item>

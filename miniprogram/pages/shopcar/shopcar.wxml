@@ -1,2 +1,42 @@
-<!--miniprogram/pages/shopcar.wxml-->
-<text>miniprogram/pages/shopcar.wxml</text>
+
+<view class="car-container">
+  <view class="container" wx:for="{{shopcar_List}}" wx:key="index">
+    <image class="left-icon" 
+    src="{{item.isOn?img_url2:img_url1}}" 
+    
+    bindtap="clickSelect" data-index="{{index}}"></image>
+    <view class="content">
+      <image src="{{item.good.main_image[index]}}"> </image>
+      <view class="inner">
+        <view class="title">{{item.good.title}}</view>
+        <view class="one-price">¥{{item.good.now_price*item.count}}</view>
+      </view>
+    </view>
+    <view class="right">
+      <image class="chahao" 
+      src="cloud://cloud1-8gwbqvbh5c0a5f20.636c-cloud1-8gwbqvbh5c0a5f20-1307542532/叉号.png"
+      bindtap="deleteItem"
+      data-index="{{index}}"
+      ></image>
+      <view class="reduce type" bindtap="reduce_count"
+      data-index="{{index}}"
+      >-</view>
+        <view class="count-title2">{{item.count}}</view>
+      <view class="add type" bindtap="add_count"
+      data-index="{{index}}"
+      >+</view>
+    </view>
+  </view>
+
+  <view class="buy-bottom">
+    <image class="total-icon" 
+    src="{{isOn?img_url2:img_url1}}" 
+    
+    bindtap="clickSelectAll" ></image>
+    <view class="buy-left">
+      <view class="buy-content">合计</view>
+      <view class="total-money">￥{{total_money}}</view>
+    </view>
+    <view class="buy-button">下单</view>
+  </view>
+</view>
