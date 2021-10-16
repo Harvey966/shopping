@@ -1,9 +1,10 @@
 
 .car-container{
-  height: 100vh;
   background-color: rgb(240, 239, 236);
 }
-
+.margin-bot{
+  height: 100rpx;
+}
 .container{
   width: 712rpx;
   display: flex;
@@ -80,7 +81,7 @@ image{
 
 .buy-bottom{
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   border-top: rgb(235, 232, 232) 3.7rpx solid;
   display: flex;

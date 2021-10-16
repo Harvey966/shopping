@@ -1,8 +1,8 @@
 //app.js
-const miniShopPlugin = requirePlugin('mini-shop-plugin');
+
 App({
   onLaunch: function () {
-    miniShopPlugin.initApp(this, wx);
+   
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -18,8 +18,7 @@ App({
     
     this.globalData = {
       goods:[],
-      user:{
-        _openid:'',
+      user:{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
         shopcar_List:[],//购物车商品列表
         delivery_address:{},//收货地址
         daifukuan:[],//待付款

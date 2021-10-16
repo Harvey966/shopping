@@ -40,7 +40,7 @@
         <view class="icon-text">客服</view>
       </view>
     </view>
-    <view class="shop-button">
+    <view class="shop-button" bindtap="addShopCar">
       加入购物车
     </view>
     <view class="buy-button" bindtap="linkToOrder">

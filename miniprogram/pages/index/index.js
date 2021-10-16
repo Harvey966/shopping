@@ -36,6 +36,7 @@ Page({
       openid=res.result.openid;
     })
     let flag=true;
+    let user;
     await db.collection("user").where({
       _openid:openid
     }).get().then(res=>{
@@ -43,10 +44,14 @@ Page({
         console.log("没有找到");
         flag=false;
       }
+      else{
+        user = res.data[0]
+      }
     })
     const demo = {
+        openid:openid,
         shopcar_List:[],//购物车商品列表
-        delivery_address:{},//收货地址
+        address:{},//收货地址
         daifukuan:[],//待付款
         daifahuo:[],//代发货
         yifahuo:[],//已发货
@@ -59,9 +64,10 @@ Page({
       })
     }
     else {
-      console.log("找到了");
-    }
+      app.globalData.user=user
 
+    }
+    console.log("user:",app.globalData.user);
   },
 
   clickImg(event){
@@ -70,11 +76,11 @@ Page({
 
   },
   linkToType(e){
-    const productId = [51699172] // 填写具体的商品Id
-    wx.navigateTo({
+    // const productId = [51699172] // 填写具体的商品Id
+    // wx.navigateTo({
       
-      url: `plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=${productId}`,
-    })
+    //   url: `plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=${productId}`,
+    // })
   },
   linkToGoods(e){
     

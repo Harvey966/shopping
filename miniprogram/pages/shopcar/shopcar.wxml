@@ -6,7 +6,7 @@
     
     bindtap="clickSelect" data-index="{{index}}"></image>
     <view class="content">
-      <image src="{{item.good.main_image[index]}}"> </image>
+      <image src="{{item.good.images[0]}}"> </image>
       <view class="inner">
         <view class="title">{{item.good.title}}</view>
         <view class="one-price">¥{{item.good.now_price*item.count}}</view>
@@ -27,7 +27,7 @@
       >+</view>
     </view>
   </view>
-
+  <view class="margin-bot"></view>
   <view class="buy-bottom">
     <image class="total-icon" 
     src="{{isOn?img_url2:img_url1}}" 
@@ -39,4 +39,5 @@
     </view>
     <view class="buy-button">下单</view>
   </view>
+
 </view>

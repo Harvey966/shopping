@@ -2,27 +2,27 @@
 <view class="address-container">
   <view class="container">
     <view class="left">联系人</view>
-    <input placeholder="姓名"/>
+    <input placeholder="{{address.name?address.name:'姓名'}}" model:value="{{name}}" />
   </view>
 
   <view class="container">
     <view class="left">手机号码</view>
-    <input placeholder="手机号码"/>
+    <input placeholder="{{address.phone_number?address.phone_number:'手机号码'}}" model:value="{{phone_number}}"  />
   </view>
 
   <view class="container">
     <view class="left">地区信息</view>
-    <input placeholder="地区信息"/>
+    <input placeholder="{{address.pro?address.pro:'省/市/县|区'}}" model:value="{{pro}}" />
   </view>
 
   <view class="container">
     <view class="left">详细地址</view>
-    <input placeholder="街道门牌信息"/>
+    <input placeholder="{{address.detail?address.detail:'街道门牌信息'}}" model:value="{{detail}}" />
   </view>
 
   <view class="container">
     <view class="left">邮政编码</view>
-    <input placeholder="邮政编码"/>
+    <input placeholder="{{address.youzheng?address.youzheng:'邮政编码'}}" model:value="{{youzheng}}" />
   </view>
-  <view class="save">保存</view>
+  <view class="save" bindtap="saveBtn">保存</view>
 </view>

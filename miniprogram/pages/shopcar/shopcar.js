@@ -1,32 +1,12 @@
 // miniprogram/pages/shopcar.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shopcar_List:[
-      {
-        good:{
-          title:"平衡车123123",
-          now_price:122,
-          main_image:["../../images/order/平衡车.jpg"]
-        },
-        count:1,
-        total_money:122,
-        isOn:0
-      },
-      {
-        good:{
-          title:"平衡车1手机壳3",
-          now_price:122,
-          main_image:["../../images/order/平衡车.jpg"]
-        },
-        count:1,
-        total_money:122,
-        isOn:0
-      },
-    ],
+    shopcar_List:[],
     img_url1:'../../images/shopcar/选择框_默认.png',
     img_url2:'../../images/shopcar/选择框_选中.png',
     isOn:0,
@@ -36,8 +16,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
+  onShow: function (options) {
+    this.setData({
+      shopcar_List:app.globalData.user.shopcar_List
+    })
    
     
   },
@@ -132,52 +114,4 @@ Page({
       total_money:all
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

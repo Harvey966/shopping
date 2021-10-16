@@ -11,8 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    image:['../../images/index/1.jpg','../../images/index/2.jpg','../../images/index/3.jpg'],
-    good:{}
+    good:{},
+    indexId:0
   },
 
   /**
@@ -21,18 +21,29 @@ Component({
   methods: {
     linkToOrder(){
       wx.navigateTo({
-        url: '../order/order',
+        url: '../order/order?index='+this.data.indexId,
+
       })
     },
     linkToIndex(){
       wx.navigateBack();
     },
     onLoad(option){
-      
       this.setData({
-        good:getApp().globalData.goods[option.index]
-      },res=>{
-        console.log(this.data.good);
+        good:getApp().globalData.goods[option.index],
+        indexId:option.index
+      })
+    },
+    addShopCar(){
+      getApp().globalData.user.shopcar_List.unshift(
+        {
+          good:this.data.good,
+          count:1,
+          isOn:0
+        }
+      )
+      wx.showToast({
+        title: '加入成功'
       })
     }
   },
