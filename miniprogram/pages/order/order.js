@@ -1,4 +1,6 @@
 // pages/order/order.js
+const app = getApp()
+const db = wx.cloud.database()
 Component({
   /**
    * 组件的属性列表
@@ -60,6 +62,35 @@ Component({
       wx.navigateTo({
         url:"../address/address"
       })
+    },
+    async clickOrder(){
+      let outTradeNo = Math.random().toString(36).substr(3,10);
+      let nonceStr = Math.random().toString(36).substr(3,12);
+      await db.collection("order").add({
+        data:this.data.order
+      })
+      
+      const res = await wx.cloud.callFunction({
+        name:"callpay",
+        data:{
+          order:this.data.order,
+          outTradeNo,
+          nonceStr
+        }
+      })
+     
+      const payment = res.result.payment
+      const res2 = await wx.requestPayment({
+        ...payment
+      }).catch(err=>{
+        console.log("支付失败err");
+      })
+      if(res2?.errMsg==="requestPayment:ok"){
+        console.log("支付成功");
+      }
+      else{
+        console.log("支付失败");
+      }
     }
 
   }
