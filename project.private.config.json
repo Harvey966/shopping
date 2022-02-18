@@ -29,6 +29,12 @@
           "pathName": "pages/shopcar/shopcar",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/orderForm/orderForm",
+          "pathName": "pages/orderForm/orderForm",
+          "query": "",
+          "scene": null
         }
       ]
     }

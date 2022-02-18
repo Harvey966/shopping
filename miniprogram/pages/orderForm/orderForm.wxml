@@ -1,13 +1,10 @@
-
-
 <view class="order-container">
   <view class="address" bindtap="linktoAddress">
     <image class="icon icon-left" src="../../images/order/位置.png"></image>
     <view class="detail">
-      <view class="name">{{user.address.name?user.address.name:"请补充收货地址"}} {{user.address.phone_number}}</view>
-      <view class="detail-address">{{user.address.address_detail}}</view>
+      <view class="name">{{order.address.name}} {{order.address.phone_number}}</view>
+      <view class="detail-address">{{order.address.address_detail}}</view>
     </view>
-    <image class="icon icon-right" src="../../images/order/右箭头.png"></image>
   </view>
 
   <view class="order-card">
@@ -15,16 +12,14 @@
       <image src="../../images/order/平衡车.jpg" class="image"></image>
       <view class="title">{{good.title}}</view>
       <view class="price-count">
-        <view class="price">￥{{good.now_price}}</view>
-        <view class="count">*{{count}}</view>
+        <view class="price">￥{{order.good.now_price}}</view>
+        <view class="count">*{{order.count}}</view>
       </view>
     </view>
     <view class="card-count">
       <view class="count-title">购买数量</view>
       <view class="add-container">
-        <view class="reduce type" bindtap="reduce_count">-</view>
-        <view class="count-title2">{{count}}</view>
-        <view class="add type" bindtap="add_count">+</view>
+        <view class="count-title2">{{order.count}}</view>
       </view>
     </view>
     <view class="card-kuaidi">
@@ -37,10 +32,10 @@
     </view>
     <view class="card-youhui">
       <view class="youhui-title">
-        店铺优惠
+        创建时间
       </view>
       <view class="youhui-right">
-        没有可用的优惠
+        {{order.order_time}}
       </view>
     </view>
     <view class="card-all">
@@ -57,12 +52,5 @@
     <view class="remarks-right">
       <input placeholder="选填：备注" model:value="{{beizhu}}" />
     </view>
-  </view>
-  <view class="buy-bottom">
-    <view class="buy-left">
-      <view class="buy-content">合计</view>
-      <view class="total-money">￥{{total_money}}</view>
-    </view>
-    <button class="buy-button"	open-type="contact"  bindtap="clickOrder">下单</button>
   </view>
 </view>

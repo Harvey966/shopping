@@ -26,11 +26,7 @@ Component({
    */
   methods: {
     onLoad(){
-      console.log(getApp().globalData.user);
-      this.setData({
-        address:getApp().globalData.user.address
-      })
-      
+      this.setData(getApp().globalData.user.address)
     },
     saveBtn(){
       
@@ -47,7 +43,7 @@ Component({
     },
     async updateUser(){
       await db.collection("user").where({
-        openid1:getApp().globalData.user.openid
+        openid:getApp().globalData.user.openid
       }).update({
         data:{
           address:getApp().globalData.user.address

@@ -14,7 +14,7 @@
       <view class="now-price">￥{{good.now_price}}</view>
       <view class="old-price">{{good.old_price}}</view>
     </view>
-    <view class="zhiying">小哲商店|直营</view>
+    <view class="zhiying">咖啡店|直营</view>
     <view class="title">
       {{good.title}}
     </view>

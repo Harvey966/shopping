@@ -22,7 +22,6 @@ Component({
     linkToOrder(){
       wx.navigateTo({
         url: '../order/order?index='+this.data.indexId,
-
       })
     },
     linkToIndex(){

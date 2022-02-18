@@ -34,6 +34,7 @@ Page({
       name:"login"
     }).then(res=>{
       openid=res.result.openid;
+      console.log("login数据",res);
     })
     let flag=true;
     let user;
@@ -67,7 +68,6 @@ Page({
       app.globalData.user=user
 
     }
-    console.log("user:",app.globalData.user);
   },
 
   clickImg(event){
@@ -76,11 +76,11 @@ Page({
 
   },
   linkToType(e){
-    // const productId = [51699172] // 填写具体的商品Id
-    // wx.navigateTo({
+    const productId = [51699172] // 填写具体的商品Id
+    wx.navigateTo({
       
-    //   url: `plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=${productId}`,
-    // })
+      url: `plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=${productId}`,
+    })
   },
   linkToGoods(e){
     

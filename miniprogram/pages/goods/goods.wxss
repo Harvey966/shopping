@@ -6,8 +6,7 @@
   box-sizing: border-box;
 }
 .swiper-image{
-  width: 100vh;
-  height: 500rpx;
+  height: 800rpx;
 }
 .goods-car{
   background-color: #ffffff;

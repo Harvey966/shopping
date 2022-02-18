@@ -6,7 +6,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    
   },
 
   /**
@@ -17,7 +17,9 @@ Component({
     user:{},
     good:{},
     indexId:0,
-    order:{}
+    total_money:0,
+    beizhu:""
+    
   },
 
   /**
@@ -26,36 +28,31 @@ Component({
   methods: {
     
     onLoad(option){
-
+      
       this.setData({
         good:getApp().globalData.goods[option.index],
         user:getApp().globalData.user,
         indexId:option.index,
-        order:{
-          address:getApp().globalData.user.address,
-          good:getApp().globalData.goods[option.index],
-          type:0,
-          count:1,
-          total_money:getApp().globalData.goods[option.index].now_price,
-
-        }
+        total_money:app.globalData.goods[option.index].now_price
       })
       
     },
     onShow(){
         this.setData({
-          user:getApp().globalData.user
+          user:getApp().globalData.user,
         })
     },
     reduce_count(){
       if(this.data.count>1)
       this.setData({
-        count:this.data.count-1
+        count:this.data.count-1,
+        total_money:(this.data.count-1)*this.data.good.now_price
       })
     },
     add_count(){
       this.setData({
-        count:this.data.count+1
+        count:this.data.count+1,
+        total_money:(this.data.count+1)*this.data.good.now_price
       })
     },
     linktoAddress(){
@@ -66,31 +63,42 @@ Component({
     async clickOrder(){
       let outTradeNo = Math.random().toString(36).substr(3,10);
       let nonceStr = Math.random().toString(36).substr(3,12);
+      let order={
+        address:this.data.user.address,
+        good:this.data.good,
+        type:0,
+        count:this.data.count,
+        total_money:this.data.good.now_price*this.data.count,
+        beizhu:this.data.beizhu,
+        order_time:new Date().format("yyyy-MM-dd hh:mm:ss")
+      }
+
       await db.collection("order").add({
-        data:this.data.order
+        data:order
       })
       
-      const res = await wx.cloud.callFunction({
-        name:"callpay",
-        data:{
-          order:this.data.order,
-          outTradeNo,
-          nonceStr
-        }
-      })
+      // const res = await wx.cloud.callFunction({
+      //   name:"callpay",
+      //   data:{
+      //     order,
+      //     outTradeNo,
+      //     nonceStr,
+      //     openid:app.globalData.user._openid
+      //   }
+      // })
      
-      const payment = res.result.payment
-      const res2 = await wx.requestPayment({
-        ...payment
-      }).catch(err=>{
-        console.log("支付失败err");
-      })
-      if(res2?.errMsg==="requestPayment:ok"){
-        console.log("支付成功");
-      }
-      else{
-        console.log("支付失败");
-      }
+      // const payment = res.result.payment
+      // const res2 = await wx.requestPayment({
+      //   ...payment
+      // }).catch(err=>{
+      //   console.log("支付失败",err);
+      // })
+      // if(res2?.errMsg==="requestPayment:ok"){
+      //   console.log("支付成功");
+      // }
+      // else{
+      //   console.log("支付失败");
+      // }
     }
 
   }

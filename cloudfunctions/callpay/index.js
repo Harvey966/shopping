@@ -12,10 +12,10 @@ exports.main = async (event, context) => {
     "nonceStr": event.nonceStr,
     "body" : event.order.good.title,
     "outTradeNo" : event.outTradeNo,
-    "totalFee" : 1,
-    "spbillCreateIp" : "123.12.12.123",
+    "totalFee" : event.order.total_money*100,
+    "spbillCreateIp" : "192.168.1.1",
     "tradeType":"JSAPI",
-    "openid":"oJr0B4-OGI7YQM1U9MUPCt-Nnl5Y"
+    "openid":event.openid
     
     
   })

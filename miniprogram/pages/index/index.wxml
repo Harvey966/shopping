@@ -3,7 +3,7 @@
   <swiper indicator-dots="ture"
         autoplay="false" interval="2000" duration="500">
         <block wx:for="{{image}}"  wx:key="*this" >
-          <swiper-item bindtap="clickImg" data-index="{{index}}">
+          <swiper-item bindtap="linkToType" data-index="{{index}}">
             <image src="{{item}}" class="swiper-image"></image>
           </swiper-item>
       </block>
