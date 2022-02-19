@@ -9,11 +9,11 @@
     <view class="left">修改收货地址</view>
     <view class="right">></view>
   </view>
-  <view class="order-manage">
+  <view class="order-manage" bindtap="toOrderManage" wx:if="{{vip}}">
     <view class="left">管理订单</view>
     <view class="right">></view>
   </view>
-  <view class="good-manage">
+  <view class="good-manage" bindtap="toGoodManage" wx:if="{{vip}}">
     <view class="left">管理商品</view>
     <view class="right">></view>
   </view>

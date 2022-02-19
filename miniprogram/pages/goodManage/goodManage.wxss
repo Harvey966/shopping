@@ -1,25 +1,10 @@
-.order-list{
-  height: 100%;
-  background-color: rgb(230, 230, 230);
-  min-height: 100vh;
-  font-size: 35rpx;
-}
-.nav-container{
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0rpx;
-  height: 80rpx;
-  z-index: 10;
+.good-manage{
+  height: 100vh;
   background-color: rgb(230, 230, 230);
 }
-.nav-item{
-  padding-bottom: 30rpx;
-}
-.orangeStyle{
-  color:orange;
-  border-bottom: 3px solid orange;
+.title{
+  text-align: center;
+  padding: 20rpx 0;
 }
 .order-item{
   padding: 20rpx;
@@ -62,7 +47,14 @@
   color: rgb(243, 146, 66);
   border: 1rpx solid rgb(243, 146, 66);
 }
-.header{
-  display: flex;
-  justify-content: space-between;
+.add-btn{
+  width: 150rpx !important;
+  height: 80rpx;
+  position: sticky;
+  bottom: 40rpx;
+  left: 325rpx;
+  padding: 10rpx 20rpx;
+  margin: 0 !important;
+  background-color: orange;
+  box-shadow: 0px 5px 5px #888888;
 }

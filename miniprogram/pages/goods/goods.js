@@ -44,7 +44,8 @@ Component({
       wx.showToast({
         title: '加入成功'
       })
-    }
+    },
+    
   },
   
 })

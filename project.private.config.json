@@ -19,32 +19,26 @@
           "query": ""
         },
         {
-          "name": "pages/order/order",
-          "pathName": "pages/order/order",
+          "name": "pages/myOrderList/myOrderList",
+          "pathName": "pages/myOrderList/myOrderList",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/shopcar/shopcar",
-          "pathName": "pages/shopcar/shopcar",
+          "name": "pages/goodManage/goodManage",
+          "pathName": "pages/goodManage/goodManage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orderManage/orderManage",
+          "pathName": "pages/orderManage/orderManage",
           "query": "",
           "scene": null
         },
         {
           "name": "pages/orderForm/orderForm",
           "pathName": "pages/orderForm/orderForm",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/myself/myself",
-          "pathName": "pages/myself/myself",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/myOrderList/myOrderList",
-          "pathName": "pages/myOrderList/myOrderList",
           "query": "",
           "scene": null
         }

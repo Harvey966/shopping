@@ -14,8 +14,8 @@
 
   <view class="order-card">
     <view class="card-title">
-      <image src="../../images/order/平衡车.jpg" class="image"></image>
-      <view class="title">{{good.title}}</view>
+      <image src="{{order.good.images[0]}}" class="image"></image>
+      <view class="title">{{order.good.title}}</view>
       <view class="price-count">
         <view class="price">￥{{order.good.now_price}}</view>
         <view class="count">*{{order.count}}</view>

@@ -1,6 +1,8 @@
 
 <view class="goods-container">
-  <swiper indicator-dots="ture"
+  <swiper 
+        indicator-dots="ture"
+        class="swiper"
         autoplay="false"  >
         <block wx:for="{{good.images}}"  wx:key="*this" >
           <swiper-item bindtap="clickImg" data-index="{{index}}">
@@ -24,7 +26,7 @@
       发货
     </view>
     <view class="send-right">
-      <view class="right-title">快递-河南省发货</view>
+      <view class="right-title">快递-极速发货</view>
       <view class="right-content">付款后24效时发货</view>
     </view>
   </view>
@@ -35,14 +37,15 @@
         <image class="icon" src="../../images/goods/shop.png"></image>
         <view class="icon-text">店铺</view>
       </view>
-      <view class="icon-container">
+      <!-- <view class="icon-container" bindtap="toKefu">
         <image class="icon"  src="../../images/goods/service.png"></image>
         <view class="icon-text">客服</view>
-      </view>
+      </view> -->
+      <!-- <button open-type="contact" class="contact"></button> -->
     </view>
-    <view class="shop-button" bindtap="addShopCar">
+    <!-- <view class="shop-button" bindtap="addShopCar">
       加入购物车
-    </view>
+    </view> -->
     <view class="buy-button" bindtap="linkToOrder">
       立即购买
     </view>

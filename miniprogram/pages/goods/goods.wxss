@@ -1,11 +1,16 @@
 /* pages/goods/goods.wxss */
 .goods-container{
   background: rgb(230, 233, 233);
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
 }
+.swiper{
+  height: 500rpx !important;
+}
 .swiper-image{
-  height: 800rpx;
+  width: 100%;
+  
 }
 .goods-car{
   background-color: #ffffff;
@@ -90,6 +95,7 @@
   display: flex;
   width: 100%;
   padding: 7.5rpx;
+  justify-content: space-between;
 }
 .nav-icon{
   display: flex;
@@ -108,7 +114,8 @@
 }
 .icon-text{
   font-size: 22rpx;
-  
+  padding: 0rpx !important;
+  margin: 0rpx !important;
 }
 .buy-button{
   
@@ -121,6 +128,7 @@
   height: 60rpx;
   line-height: 60rpx;
   margin-top: 37rpx;
+  margin-right: 30rpx;
 }
 .shop-button{
   margin-right: 20rpx;

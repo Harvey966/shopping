@@ -22,7 +22,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
     onLoad(){
       this.fetchData(0)
     },
@@ -37,16 +36,19 @@ Component({
         title: '',
       })
       let res=await db.collection("order").where({
-        type
+        type,
+        _openid:app.globalData.user._openid
       }).get()
-      console.log("请求结果",res);
-      
+      let data = res.data.concat().reverse()
       await this.setData({
-        dataList:res.data
+        dataList:data
       })
-      console.log("列表",this.data.dataList);
       wx.hideLoading()
     },
-    
+    async toOrderForm(option){
+      wx.navigateTo({
+        url: `../orderForm/orderForm?id=${option.target.dataset.id}`,
+      })
+    }
   }
 })

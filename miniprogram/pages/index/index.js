@@ -53,10 +53,7 @@ Page({
         openid:openid,
         shopcar_List:[],//购物车商品列表
         address:{},//收货地址
-        daifukuan:[],//待付款
-        daifahuo:[],//代发货
-        yifahuo:[],//已发货
-        yiwancheng:[]//已完成
+        vip:false
     }
     if(!flag){
       app.globalData.user=demo
@@ -88,22 +85,5 @@ Page({
       url:"../goods/goods?index="+e.currentTarget.dataset.index
     })
   },
-  clickBtn(){
-    db.collection("goods").add(
-      {
-        data:{
-          "title": "溜冰鞋滑板车",
-          "now_price": 123,
-          "old_price": 999,
-          "images": ["cloud://cloud1-8gwbqvbh5c0a5f20.636c-cloud1-8gwbqvbh5c0a5f20-1307542532/平衡车.jpg"],
-          "count": 999,
-          "status": 1,
-          "banner": 0
-        }
-      }
-
-    ).then(res=>{
-      console.log(res)
-    })
-  }
+  
 })

@@ -3,13 +3,14 @@
     "pages/index/index",
     "pages/shopcar/shopcar",
     "pages/myself/myself",
-    "pages/type/type",
-    "pages/select/select",
     "pages/goods/goods",
     "pages/order/order",
     "pages/address/address",
     "pages/orderForm/orderForm",
-    "pages/myOrderList/myOrderList"
+    "pages/myOrderList/myOrderList",
+    "pages/goodManage/goodManage",
+    "pages/changeGoods/index",
+    "pages/orderManage/orderManage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

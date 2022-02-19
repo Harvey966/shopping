@@ -1,4 +1,4 @@
-<view class="order-list">
+<view class="order-manage">
   <view class="nav-container" >
     <view 
       class="nav-item {{type===index?'orangeStyle':''}}" 
@@ -18,12 +18,26 @@
       </view>
       <view class="content">
         <image src="{{item.good.images[0]}}" class="icon"></image>
-        <view class="title">{{item.good.title}}</view>
         <view class="price">
+          <view class="title">{{item.good.title}}</view>
           <view class="money">{{item.good.now_price}}*{{item.count}}</view>
           <view class="total">总价:{{item.total_money}}</view>
-          <button wx:if="{{type===0}}" class="pay" bindtap="toOrderForm" data-id="{{item._id}}">付款</button></view>
+          
         </view>
+      </view>
+      <view class="info">
+          <view class="name">{{item.address.name}}</view>
+          <view class="name">{{item.address.phone_number}}</view>
+          <view class="detail">{{item.address.address_detail}}</view>
+      </view>
+      <button bindtap="changeOrderType" data-id="{{item._id}}">修改订单状态</button>
     </view>
+  </view>
+  <view class="mask" wx:if="{{isMask}}" bindtap="clickMask"></view>
+  <view class="mask-container" wx:if="{{isMask}}">
+    <radio-group class="radio-container" bindchange="changeRadio">
+      <radio class="radio-item" wx:for="{{mapType}}" value="{{index}}">{{item}}</radio>
+    </radio-group>
+    <button bindtap="confirmType">确认修改</button>
   </view>
 </view>

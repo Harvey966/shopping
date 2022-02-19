@@ -1,0 +1,51 @@
+.change-goods{
+  padding:20rpx;
+}
+.title-container{
+  display: flex;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.title-container .left{
+  margin-right: 20rpx;
+}
+.title-container input{
+  border: 1px solid #ccc;
+}
+.images-container .left{
+  margin-right: 20rpx;
+}
+.images-container{
+  display: flex;
+  padding: 10rpx 20rpx;
+  
+}
+.button{
+  padding: 5rpx 10rpx !important;
+  margin: 0 !important;
+  border: 1px solid #ccc;
+  background-color: orange;
+}
+.images-container .left{
+  margin-right: 20rpx;
+}
+.image-for{
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+.image-for .img{
+  height: 150rpx;
+  width: 150rpx;
+  margin-right: 10rpx;
+}
+input{
+  padding: 5rpx;
+}
+.btn-container{
+  display: flex;
+}
+.btn-container button{
+  background-color: orange;
+  padding: 5 10rpx !important;
+  margin: 10rpx 10rpx !important;
+}

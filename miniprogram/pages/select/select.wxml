@@ -1,8 +1,0 @@
-
-<view class="select">
-  <view class="text">以下两种福利方式</view>
-  <view class="container">
-    <view class="liji">立即支付</view>
-    <view class="huodao">货到付款</view>
-  </view>
-</view>

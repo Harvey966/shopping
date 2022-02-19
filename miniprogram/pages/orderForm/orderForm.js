@@ -28,7 +28,7 @@ Component({
       })
       console.log("option",option);
       let res = await db.collection("order").where({
-        _id:"54ad1eea620fa34b1148e5063c364071"
+        _id:option.id
       }).get()
       await this.setData({
         order:res.data[0]
