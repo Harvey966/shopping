@@ -8,7 +8,8 @@
     "pages/goods/goods",
     "pages/order/order",
     "pages/address/address",
-    "pages/orderForm/orderForm"
+    "pages/orderForm/orderForm",
+    "pages/myOrderList/myOrderList"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -26,8 +27,8 @@
         "selectedIconPath": "./images/icon/index_aictive.png"
       },
       {
-        "pagePath": "pages/shopcar/shopcar",
-        "text": "购物车",
+        "pagePath": "pages/myOrderList/myOrderList",
+        "text": "订单",
         "iconPath": "./images/icon/car.png",
         "selectedIconPath": "./images/icon/car_aictive.png"
       },

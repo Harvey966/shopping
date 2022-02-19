@@ -10,7 +10,7 @@
   overflow: hidden;
   display: block;
   margin-left: 40rpx;
-  width: 100rpx ;
+  width: 100rpx;
   height: 100rpx ;
   border-radius: 50%;
 }
@@ -19,27 +19,11 @@
   margin-top: 30rpx;
   margin-left: 40rpx;
 }
-.my-order{
+.address,.order-manage,.good-manage{
   display: flex;
   justify-content: space-between;
   padding: 1rem 0.5rem 1rem 1rem;
   border-bottom: 0.05px solid #ccc;
   border-top: 0.05px solid #ccc;
 }
-.order-list{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 0.01rem solid #ccc;
-  font-size: .5rem;
-}
-.icon-wrapper image{
-  width: 2rem;
-  height: 2rem;
-}
-.icon-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+

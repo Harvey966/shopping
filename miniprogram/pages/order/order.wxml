@@ -1,6 +1,7 @@
 
 
 <view class="order-container">
+  <view class="padding-top"></view>
   <view class="address" bindtap="linktoAddress">
     <image class="icon icon-left" src="../../images/order/位置.png"></image>
     <view class="detail">

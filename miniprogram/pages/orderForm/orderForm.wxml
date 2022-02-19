@@ -1,4 +1,9 @@
 <view class="order-container">
+  <view class="order-status-container">
+    <view class="status-words">{{mapType[order.type]}}</view>
+    <view class="status-tip">{{mapTip[order.type]}}</view>
+    <button class="status-button" open-type="contact">联系客服</button>
+  </view>
   <view class="address" bindtap="linktoAddress">
     <image class="icon icon-left" src="../../images/order/位置.png"></image>
     <view class="detail">
@@ -43,14 +48,14 @@
         订单总金额
       </view>
       <view class="all-right">
-        ￥29.99
+        {{order.good.now_price*order.count}}
       </view>
     </view>
 
   </view>
   <view class="remarks-container">
     <view class="remarks-right">
-      <input placeholder="选填：备注" model:value="{{beizhu}}" />
+      <input  model:value="{{beizhu}}" />
     </view>
   </view>
 </view>

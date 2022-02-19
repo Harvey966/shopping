@@ -1,0 +1,26 @@
+<view class="order-list">
+  <view class="nav-container" >
+    <view 
+      class="nav-item {{type===index?'orangeStyle':''}}" 
+      bindtap="changeType" 
+      wx:for="{{mapType}}"
+      wx:key="{{index+item}}"
+      data-index="{{index}}"
+    >
+      {{item}}
+    </view>
+  </view>
+  <view class="list-container">
+    <view class="order-item" wx:for="{{dataList}}">
+      <view class="status">{{mapType[type]}}</view>
+      <view class="content">
+        <image src="{{item.good.images[0]}}" class="icon"></image>
+        <view class="title">{{item.good.title}}</view>
+        <view class="price">
+          <view class="money">{{item.good.now_price}}*{{item.count}}</view>
+          <view class="total">总价:{{item.total_money}}</view>
+          <button wx:if="{{type===0}}" class="pay">付款</button></view>
+        </view>
+    </view>
+  </view>
+</view>

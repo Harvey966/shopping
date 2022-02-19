@@ -61,8 +61,9 @@ Component({
       })
     },
     async clickOrder(){
-      let outTradeNo = Math.random().toString(36).substr(3,10);
-      let nonceStr = Math.random().toString(36).substr(3,12);
+      wx.showLoading({
+        title: '',
+      })
       let order={
         address:this.data.user.address,
         good:this.data.good,
@@ -76,7 +77,10 @@ Component({
       await db.collection("order").add({
         data:order
       })
-      
+      wx.hideLoading()
+      wx.navigateTo({
+        url: 'pages/orderForm/orderForm',
+      })
       // const res = await wx.cloud.callFunction({
       //   name:"callpay",
       //   data:{

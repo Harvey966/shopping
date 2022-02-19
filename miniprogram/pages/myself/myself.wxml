@@ -4,29 +4,18 @@
   <open-data class="user-name" type="userNickName"></open-data>
 </view>
 
-<view class="order">
-  <view class="my-order" bindtap="quanbu">
-    <view class="left">我的订单</view>
+<view class="order" bindtap="changeAddress">
+  <view class="address">
+    <view class="left">修改收货地址</view>
     <view class="right">></view>
   </view>
-  <view class="order-list">
-    <view class="icon-wrapper"  bindtap="quanbu">
-      <image class="icon" src="../../images/myself/全部.png"></image>
-      <view class="text">全部</view>
-    </view>
-    <view class="icon-wrapper" bindtap="daifukuan">
-      <image class="icon" src="../../images/myself/待付款.png"></image>
-      <view class="text">待付款</view>
-    </view>
-    <view class="icon-wrapper" bindtap="daifahuo">
-      <image class="icon" src="../../images/myself/待发货.png"></image>
-      <view class="text">待发货</view>
-    </view>
-    
-    <view class="icon-wrapper"  bindtap="shouhuo">
-      <image class="icon" src="../../images/myself/已完成.png"></image>
-      <view class="text">售后</view>
-    </view>
+  <view class="order-manage">
+    <view class="left">管理订单</view>
+    <view class="right">></view>
+  </view>
+  <view class="good-manage">
+    <view class="left">管理商品</view>
+    <view class="right">></view>
   </view>
 </view>
 

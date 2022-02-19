@@ -1,7 +1,9 @@
 .order-container{
-  width: 100vh;
-  background-color: rgb(230, 230, 230);
   height: 100vh;
+  background-color: rgb(230, 230, 230);
+}
+.padding-top{
+  height: 20rpx;
 }
 .address{
   display: flex;
@@ -12,7 +14,7 @@
   margin-right: 19rpx;
   padding: 20rpx;
   border-radius: 20rpx;
-  margin-top: 20rpx;
+  padding-top: 20rpx;
   
 }
 .icon{

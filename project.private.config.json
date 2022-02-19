@@ -35,6 +35,18 @@
           "pathName": "pages/orderForm/orderForm",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/myself/myself",
+          "pathName": "pages/myself/myself",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myOrderList/myOrderList",
+          "pathName": "pages/myOrderList/myOrderList",
+          "query": "",
+          "scene": null
         }
       ]
     }

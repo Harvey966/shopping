@@ -1,5 +1,4 @@
 .order-container{
-  width: 100vh;
   background-color: rgb(230, 230, 230);
   height: 100vh;
 }
@@ -90,8 +89,12 @@
   padding-bottom: 30rpx;
   border-bottom: rgb(214, 211, 211) solid 1rpx;
 }
-.youhui-title,.youhui-right{
+.youhui-title{
   color: black;
+}
+.youhui-right{
+  color: black;
+  font-size: 35rpx;
 }
 .remarks-container{
   width: 712rpx;
@@ -132,4 +135,36 @@
 }
 .buy-content{
   margin-top: 12rpx;
+}
+.order-status-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-bottom: 10rpx;
+}
+.order-status-container::before{
+  height: 20rpx;
+  width: 100%;
+  content: "";
+  background-color: rgb(230, 230, 230);
+}
+.status-button{
+  padding: 5rpx;
+  width: 220rpx !important;
+  margin: 20rpx;
+  border: 1rpx solid #ccc;
+  font-weight: 500;
+}
+.status-tip{
+  font-size: 20rpx;
+  margin: 10rpx;
+}
+.status-words{
+  margin-top: 20rpx;
+  font-weight: 700;
 }
