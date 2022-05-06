@@ -167,4 +167,5 @@
 .status-words{
   margin-top: 20rpx;
   font-weight: 700;
+  font-size: 40rpx;
 }

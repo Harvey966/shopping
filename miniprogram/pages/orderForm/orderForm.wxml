@@ -1,8 +1,6 @@
 <view class="order-container">
   <view class="order-status-container">
     <view class="status-words">{{mapType[order.type]}}</view>
-    <view class="status-tip">{{mapTip[order.type]}}</view>
-    <button class="status-button" open-type="contact">联系客服</button>
   </view>
   <view class="address" bindtap="linktoAddress">
     <image class="icon icon-left" src="../../images/order/位置.png"></image>
@@ -58,4 +56,6 @@
       <input  model:value="{{beizhu}}" />
     </view>
   </view>
+  <button class="status-button" open-type="contact">联系客服</button>
+  <button wx:if="{{order.type===0}}" class="buy-button" bindtap="clickOrder">付款</button>
 </view>

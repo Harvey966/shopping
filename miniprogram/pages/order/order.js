@@ -74,35 +74,40 @@ Component({
         order_time:new Date().format("yyyy-MM-dd hh:mm:ss")
       }
 
-      await db.collection("order").add({
+      let newOrder=await db.collection("order").add({
         data:order
       })
       wx.hideLoading()
-      wx.navigateTo({
-        url: 'pages/orderForm/orderForm',
+
+      // 获取调购买所需要调所有参数
+      const res = await wx.cloud.callFunction({
+        name:"callpay",
+        data:{
+          order,
+          outTradeNo:newOrder._id,
+          nonceStr:newOrder._id,
+          openid:app.globalData.user._openid
+        }
       })
-      // const res = await wx.cloud.callFunction({
-      //   name:"callpay",
-      //   data:{
-      //     order,
-      //     outTradeNo,
-      //     nonceStr,
-      //     openid:app.globalData.user._openid
-      //   }
-      // })
-     
-      // const payment = res.result.payment
-      // const res2 = await wx.requestPayment({
-      //   ...payment
-      // }).catch(err=>{
-      //   console.log("支付失败",err);
-      // })
-      // if(res2?.errMsg==="requestPayment:ok"){
-      //   console.log("支付成功");
-      // }
-      // else{
-      //   console.log("支付失败");
-      // }
+      const payment = res.result.payment
+      const res2 = await wx.requestPayment({
+        ...payment
+      }).catch(err=>{
+        console.log("支付失败",err);
+      })
+      if(res2?.errMsg==="requestPayment:ok"){
+        await db.collection("order").doc(newOrder._id).update({
+          data:{
+            type:1
+          }
+        })
+      }
+      else{
+        console.log("支付失败");
+      }
+      wx.navigateTo({
+        url: `../orderForm/orderForm?id=${newOrder._id}`,
+      })
     }
 
   }

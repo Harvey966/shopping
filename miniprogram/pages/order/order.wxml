@@ -64,6 +64,6 @@
       <view class="buy-content">合计</view>
       <view class="total-money">￥{{total_money}}</view>
     </view>
-    <button class="buy-button"	open-type="contact"  bindtap="clickOrder">下单</button>
+    <button class="buy-button" bindtap="clickOrder">下单</button>
   </view>
 </view>
