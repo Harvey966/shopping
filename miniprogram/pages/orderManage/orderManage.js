@@ -40,10 +40,13 @@ Component({
       wx.showLoading({
         title: '',
       })
-      let res=await db.collection("order").where({
-        type
-      }).get()
-      let data = res.data.concat().reverse()
+      let res = await wx.cloud.callFunction({
+        name:"getOrder",
+        data:{
+          type
+        }
+      })
+      let data = res.result.concat().reverse()
       await this.setData({
         dataList:data
       })
@@ -77,8 +80,10 @@ Component({
       wx.showLoading({
         title: '',
       })
-      await db.collection("order").doc(this.data.id).update({
+      await wx.cloud.callFunction({
+        name:"changeOrder",
         data:{
+          id:this.data.id,
           type:Number(this.data.radioValue)
         }
       })

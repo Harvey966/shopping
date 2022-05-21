@@ -24,13 +24,14 @@ Component({
       wx.showLoading({
         title: '',
       })
-      db.collection("goods").get().then(res=>{
+      wx.cloud.callFunction({
+        name:"getAllGoods"
+      }).then(res=>{
         this.setData({
-          dataList:res.data
-        },()=>{
-          wx.hideLoading()
+          dataList:res.result
         })
       })
+      wx.hideLoading()
     },
     addGoods(){
       wx.navigateTo({

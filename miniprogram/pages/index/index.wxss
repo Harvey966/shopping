@@ -1,54 +1,93 @@
-.container{
-  background-color: rgb(236, 236, 236);
-  width: 100vw;
+/**index.wxss**/
+.main {
+  margin-top: 150rpx;
+  display: flex;
+}
+.main .nav {
+  width: 180rpx;
+  min-height: 100vh;
   height: 100vh;
+  position: fixed;
 }
-
-.swiper-image{
-  width: 100vh;
-}
-.title{
-  padding-top: 47rpx;
-  margin-bottom: 47rpx;
-  text-align: center !important;
-  width: 100%;
-  font-weight: bolder;
-}
-.goods-container{
-  
+.main .nav .nav-item {
   display: flex;
-  justify-content:space-around;
-  flex-wrap: wrap;
-}
-.goods_item{
-  margin-top: 47rpx;
-  margin-bottom: 47rpx;
-  width: 340rpx;
-  height: 450rpx;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  font-size: 25rpx;
+  height: 180rpx;
+  color: #9a9a9a;
+  background: #ecebe8;
+}
+.main .nav .active {
+  font-weight: 600;
+  color: #d34535;
+  background-color: white;
   border-radius: 10rpx;
 }
-.goods_item image{
-  width: 98%;
-  height: 98%;
-  border-radius: 10rpx;
+.main .content {
+  margin-left: 200rpx;
+  flex: 1;
+  height: 80vh;
 }
-.goods_pirce{
-  color: rgb(255, 86, 8);
+.main .content .goods-container > .title {
+  color: #585858;
+  opacity: 0.9;
+  font-size: 25rpx;
+  margin-bottom: 20rpx;
 }
-
-.two{
-  width: 100%;
+.main .content .goods-container .goods-item {
+  position: relative;
   display: flex;
+  height: 160rpx;
+  margin-bottom: 60rpx;
 }
-.two image{
-  width: 50%;
-
+.main .content .goods-container .goods-item image {
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #ccc;
 }
-.one image{
-  width: 100%;
+.main .content .goods-container .goods-item .right {
+  margin-left: 15rpx;
 }
-
+.main .content .goods-container .goods-item .right .title {
+  font-size: 30rpx;
+  color: #000000;
+}
+.main .content .goods-container .goods-item .right .des {
+  margin-top: 10rxp;
+  font-size: 20rpx;
+  color: #9a9a9a;
+  width: 320rpx;
+  font-weight: 350;
+}
+.main .content .goods-container .goods-item .right .price {
+  margin: 10rpx;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+.main .content .goods-container .goods-item .right .price:before {
+  content: '¥ ';
+  font-size: 25rpx;
+  font-weight: 600;
+}
+.main .content .goods-container .goods-item .right .price::after {
+  content: ' 起';
+  font-size: 25rpx;
+  font-weight: 400;
+}
+.main .content .goods-container .goods-item .right button {
+  position: absolute;
+  right: 20rpx;
+  bottom: 0;
+  background: #d34535;
+  color: wheat;
+  font-weight: 400;
+  font-size: 25rpx;
+  width: 120rpx;
+  padding: 10rpx 5rpx !important;
+  border-radius: 40rpx;
+}
+.goods-detailed {
+  position: absolute;
+  bottom: 0;
+}

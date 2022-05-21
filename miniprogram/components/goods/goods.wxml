@@ -1,0 +1,46 @@
+
+<view class="goods-container">
+  <view class="head">
+    <view class="image-container">
+        <image class="image" src="../../images/head.png">
+        </image>
+    </view>
+    <view class="title">{{good.title}}</view>
+    <view class="desc">{{good.describe}}</view>
+  </view>
+  <form bindsubmit="addShopCar" class="form">
+    <view class="attr-container"
+        wx:for="{{good.attr_detail}}"
+        wx:for-index="outerIndex"
+        wx:for-item="attr"
+        wx:key="outerIndex"
+    >
+        <view class="title">{{attr.title}}</view>
+        <radio-group 
+            class="attr-item"
+            name="{{attr.title}}"
+        >
+            <label><radio 
+              class="radio"
+              value="{{item}}"
+              wx:for="{{attr.list}}"
+              wx:key="{`${index}`+1}"
+            >
+            {{item}}</radio></label>
+        </radio-group>
+    </view>
+    <view class="summit-container">
+        <view class="price-count-container">
+            <view class="price">¥ {{good.price}}</view>
+            <view class="count-container">
+                <view class="type" bindtap="reduceCount">-</view>
+                <view class="count-title">{{count}}</view>
+                <view class="type" bindtap="addCount">+</view>
+            </view>
+        </view>
+        <button formType="submit">加入购物袋</button>
+    </view>
+  </form>
+  <view class="placeholder"></view>
+</view>
+

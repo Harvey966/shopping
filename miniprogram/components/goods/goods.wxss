@@ -1,0 +1,94 @@
+.goods-container {
+  height: 80vh;
+  background-color: #eceaea;
+  padding: 80rpx 32rpx 0rpx 32rpx;
+  border-radius: 30rpx;
+  overflow: scroll;
+}
+.goods-container .head .image-container {
+  display: flex;
+  justify-content: center;
+}
+.goods-container .head .image-container .image {
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+}
+.goods-container .head .title {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  line-height: 70rpx;
+}
+.goods-container .head .desc {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #ABABAB;
+  opacity: 0.8;
+}
+.goods-container .form .title {
+  margin: 30rpx auto;
+  font-size: 30rpx;
+  color: #A5A5A5;
+}
+.goods-container .form .radio {
+  font-size: 30rpx;
+  color: #A5A5A5;
+}
+.goods-container .summit-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -3px 5px #ccc;
+  background-color: white;
+}
+.goods-container .summit-container .price-count-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30rpx;
+}
+.goods-container .summit-container .price-count-container .price {
+  font-weight: 700;
+  font-size: 40rpx;
+}
+.goods-container .summit-container .price-count-container .count-container {
+  display: flex;
+  margin-right: 40rpx;
+  border: 1px solid #ccc;
+  align-items: center;
+  border-radius: 30rpx;
+  height: 50rpx;
+}
+.goods-container .summit-container .price-count-container .count-container .type {
+  font-size: 50rpx;
+  color: red;
+  width: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+.goods-container .summit-container .price-count-container .count-container .count-title {
+  width: 60rpx;
+  display: flex;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  height: 100%;
+}
+.goods-container .summit-container .price-count-container .price {
+  margin-left: 40rpx;
+}
+.goods-container .summit-container button {
+  margin: 20rpx auto;
+  width: 690rpx;
+  border-radius: 40rpx;
+  background-color: #E73B2A;
+  color: white;
+}
+.goods-container .placeholder {
+  height: 240rpx;
+}

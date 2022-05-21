@@ -1,28 +1,49 @@
 <!--index.wxml-->
-<view class="container">
-  <!-- <swiper indicator-dots="ture"
-        autoplay="false" interval="2000" duration="500">
-        <block wx:for="{{image}}"  wx:key="*this" >
-          <swiper-item bindtap="linkToType" data-index="{{index}}">
-            <image src="{{item}}" class="swiper-image"></image>
-          </swiper-item>
-      </block>
-  </swiper> -->
-
-  <view class="title">
-    <text >商品推荐</text>
-  </view>
-  <view class="goods-container">
-    <view 
-      class="goods_item" 
-      bindtap="linkToGoods" 
-      wx:for="{{goods}}" 
-      data-index="{{index}}"
-      wx:key="index"
-    >
-      <image src="{{item.images[0]}}"></image>
-      <text>{{item.title}}</text>
-      <text class="goods_pirce">￥ {{item.now_price}}</text>
+<view class="view-container">
+  <view class="header"></view>
+  <view class="main">
+    <view class="nav">
+      <view  
+        wx:for="{{class_list}}" 
+        class="nav-item {{activeNum==index?'active':''}}"
+        bindtap="goAnchor"
+        data-index="{{index}}"
+      >
+        {{item.title}}
+      </view>
     </view>
+    <scroll-view
+      class="content"
+      scroll-y="true"
+      bindscroll="scroll" 
+      scroll-top="{{scrollTop}}"
+    >
+      <view
+        wx:for="{{goodsList}}" 
+        wx:for-item="good" 
+        wx:key="index"
+        id="{{'nav-'+index}}"
+        class="goods-container"
+      > 
+        <view class="title">{{class_list[index].title}}</view>
+        <view 
+          class="goods-item" 
+          wx:for="{{good}}" 
+          wx:for-index="item-index"
+          bindtap="clickGoods"
+        >
+            <image src="{{item.images}}"></image>
+            <view class="right">
+              <view class="title">{{item.title}}</view>
+              <view class="des">{{item.describe}}</view>
+              <view class="price">{{item.price}}</view>
+              <button>选规格</button>
+            </view>
+            
+        </view>
+      </view>
+    </scroll-view>
+    
   </view>
+  <goods-detailed class="goods-detailed"></goods-detailed>
 </view>

@@ -1,0 +1,101 @@
+.goods-container{
+    height: 80vh;
+    background-color: #eceaea;
+    padding: 80rpx 32rpx 0rpx 32rpx;
+    border-radius: 30rpx;
+    overflow: scroll;
+    .head{
+        .image-container{
+            display: flex;
+            justify-content: center;
+            .image{
+                width: 300rpx;
+                height: 300rpx;
+                text-align: center;
+            }
+        }
+        .title{
+            margin-top: 30rpx;
+            font-size: 36rpx;
+            line-height: 70rpx;
+        }
+        .desc{
+            margin-top: 30rpx;
+            font-size: 26rpx;
+            line-height: 40rpx;
+            color: #ABABAB;
+            opacity: .8;
+        }
+        
+    }
+    .form{
+        .title{
+            margin: 30rpx auto;
+            font-size: 30rpx;
+            color: #A5A5A5;
+        }
+        .radio{
+            font-size: 30rpx;
+            color: #A5A5A5;
+        }
+    }
+    .summit-container{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0px -3px 5px #ccc;
+        background-color: white;
+        
+        .price-count-container{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 30rpx;
+            .price{
+                font-weight: 700;
+                font-size: 40rpx;
+            }
+            .count-container{
+                display: flex;
+                margin-right: 40rpx;
+                border: 1px solid #ccc;
+                align-items: center;
+                border-radius: 30rpx;
+                height: 50rpx;
+                .type{
+                    font-size: 50rpx;
+                    color: red;
+                    width: 60rpx;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: 10rpx;
+                }
+                .count-title{
+                    width: 60rpx;
+                    display: flex;
+                    font-weight: 400;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #ccc;
+                    height: 100%;
+                }
+            }
+            .price{
+                margin-left: 40rpx;
+            }
+        }
+        button{
+            margin: 20rpx auto;
+            width: 690rpx;
+            border-radius: 40rpx;
+            background-color: #E73B2A;
+            color: white;
+        }
+    }
+    // 占位置
+    .placeholder{
+        height: 240rpx;
+    }
+}

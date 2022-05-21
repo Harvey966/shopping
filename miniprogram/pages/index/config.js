@@ -1,0 +1,72 @@
+const class_list=[{
+    title:'热销'
+},{
+    title:'原味.鲜奶茶'
+},{
+    title:'四时.鲜果赋'
+},{
+    title:'四时.鲜果赋'
+},{
+    title:'四时.鲜果赋'
+}];
+const goodsList=[
+    [{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    },{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    }],
+    [{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    },{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    }],
+    [{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    },{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    }],
+    [{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    },{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    }],
+    [{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    },{
+        title:'春日桃桃',
+        describe:'霸王茶几经典款&畅销款，第一次尝试的最佳选项',
+        price:16,
+        images:"../../images/head.png"
+    }]
+]
+module.exports={
+    goodsList,
+    class_list,
+}
