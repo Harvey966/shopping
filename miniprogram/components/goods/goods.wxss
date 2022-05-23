@@ -1,9 +1,10 @@
 .goods-container {
   height: 80vh;
-  background-color: #eceaea;
+  background-color: #fff;
   padding: 80rpx 32rpx 0rpx 32rpx;
   border-radius: 30rpx;
   overflow: scroll;
+  z-index: 999;
 }
 .goods-container .head .image-container {
   display: flex;
@@ -27,13 +28,17 @@
   opacity: 0.8;
 }
 .goods-container .form .title {
-  margin: 30rpx auto;
   font-size: 30rpx;
   color: #A5A5A5;
+}
+.goods-container .form .attr-container {
+  margin-top: 30rpx;
 }
 .goods-container .form .radio {
   font-size: 30rpx;
   color: #A5A5A5;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
 }
 .goods-container .summit-container {
   width: 100%;
@@ -91,4 +96,13 @@
 }
 .goods-container .placeholder {
   height: 240rpx;
+}
+.colse {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.colse image {
+  width: 58rpx;
+  height: 58rpx;
 }

@@ -1,9 +1,10 @@
 .goods-container{
     height: 80vh;
-    background-color: #eceaea;
+    background-color: #fff;
     padding: 80rpx 32rpx 0rpx 32rpx;
     border-radius: 30rpx;
     overflow: scroll;
+    z-index: 999;
     .head{
         .image-container{
             display: flex;
@@ -30,13 +31,17 @@
     }
     .form{
         .title{
-            margin: 30rpx auto;
             font-size: 30rpx;
             color: #A5A5A5;
+        }
+        .attr-container{
+            margin-top: 30rpx;
         }
         .radio{
             font-size: 30rpx;
             color: #A5A5A5;
+            margin-right: 30rpx;
+            margin-top: 30rpx;
         }
     }
     .summit-container{
@@ -97,5 +102,14 @@
     // 占位置
     .placeholder{
         height: 240rpx;
+    }
+}
+.colse{
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    image{
+        width: 58rpx;
+        height: 58rpx;
     }
 }

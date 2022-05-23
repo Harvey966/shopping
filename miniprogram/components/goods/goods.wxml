@@ -1,5 +1,8 @@
 
 <view class="goods-container">
+    <view class="colse">
+        <image src="../../images/icon/close.png" bindtap="close"></image>
+    </view>
   <view class="head">
     <view class="image-container">
         <image class="image" src="../../images/head.png">
@@ -22,9 +25,10 @@
         >
             <label><radio 
               class="radio"
-              value="{{item}}"
               wx:for="{{attr.list}}"
-              wx:key="{`${index}`+1}"
+              value="{{item}}"
+              wx:key="item"
+              checked="{{index==0}}"
             >
             {{item}}</radio></label>
         </radio-group>

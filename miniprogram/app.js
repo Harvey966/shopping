@@ -18,8 +18,8 @@ App({
     this.globalData = {
       goods:[],
       user:{
-        _openid:'',                                                                   
-        shopcar_List:[],//购物车商品列表
+        _openid:'',
+        bags:[],//购物车商品列表
         delivery_address:{},//收货地址
       }
     }

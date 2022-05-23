@@ -7,13 +7,23 @@ Page({
   
   data:{
     image:['../../images/index/1.jpg','../../images/index/2.jpg','../../images/index/3.jpg'],
-    indicatorDots: true,
     goods:[],
     class_list:class_list || [],
     goodsList,
+    
+    // 锚点导航
     activeNum:0, //导航栏选择的位置
     allTop:[],
     scrollTop:0,//滚动的高度
+
+    // 商品弹窗
+    showModal:false,
+    selectGood:{},
+
+    // 购物袋弹窗
+    showBags:false,
+    // 购物袋列表弹窗
+    showBagsList:false
   },
    
   onLoad(){
@@ -31,46 +41,68 @@ Page({
       })
       app.globalData.goods=res.result
     })
+    this.checkBags()
     this.getAllTop()
+  },
+  // 检查购物袋是否为空
+  checkBags(){
+    // 购物袋不为空就展示
+    if(app.globalData.user.bags.length!==0){
+        if(!this.data.showModal)
+        {
+            this.setData({
+                showBags:true
+            })
+        }
+        else{
+            this.setData({
+                showBags:false
+            })
+        }
+
+    }
   },
   //判断有没有找到这个用户，若没有，则新建它的数据
   async onLoadLogin(){
     let openid="";
-    await wx.cloud.callFunction({
+    // 登陆
+    let loginRed=await wx.cloud.callFunction({
       name:"login"
-    }).then(res=>{
-      openid=res.result.openid;
-      console.log("login数据",res);
     })
+    openid=loginRed.result.openid;
     let flag=true;
     let user;
-    await db.collection("user").where({
+    // 根据openid查找是否已经存在
+    let userRes=await db.collection("user").where({
       _openid:openid
-    }).get().then(res=>{
-      if(res.data.length===0){
+    }).get()
+    if(userRes.data.length===0){
         console.log("没有找到");
         flag=false;
-      }
-      else{
-        user = res.data[0]
-      }
-    })
+    }
+    else{
+        user = userRes.data[0]
+    }
     const demo = {
-        openid:openid,
-        shopcar_List:[],//购物车商品列表
+        _openid:openid,
+        bags:[],//购物车商品列表
         address:{},//收货地址
-        vip:false
+        vip:false,
+        new:true
     }
     if(!flag){
       app.globalData.user=demo
-      await db.collection("user").add({
-        data:demo
+      wx.cloud.callFunction({
+          name:'updateUser',
+          data:demo
       })
     }
     else {
       app.globalData.user=user
+      this.checkBags()
     }
   },
+  // 锚点导航
   goAnchor(e){
     const index=e.target.dataset.index
     const id = 'nav-'+index
@@ -105,7 +137,7 @@ Page({
       })
    },
 
-   //滚动时
+   // 滚动时改变锚点导航
    scroll(e) {
     let nowNum=e.detail.scrollTop
     let len = this.data.allTop.length
@@ -118,11 +150,24 @@ Page({
         activeNum:resNum
     })
   },
-  clickGoods(e){
-    
-    wx.navigateTo({
-      url:"../goods/goods?index="+e.currentTarget.dataset.index
-    })
+
+  // 关闭商品弹窗展示
+  hideModal(){
+    this.setData({
+        showModal:false,
+        showBagsList:false
+    },()=>{this.checkBags()})
   },
-  
+  // 打开商品弹窗展示
+  showModal(e){
+    this.setData({
+        showModal:true,
+        selectGood:e.currentTarget.dataset.good
+    },()=>{this.checkBags()})
+  },
+  openBagsList(){
+      this.setData({
+        showBagsList:true
+      })
+  }
 })

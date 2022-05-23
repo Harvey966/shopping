@@ -8,6 +8,7 @@
         class="nav-item {{activeNum==index?'active':''}}"
         bindtap="goAnchor"
         data-index="{{index}}"
+        wx:key="index"
       >
         {{item.title}}
       </view>
@@ -28,9 +29,12 @@
         <view class="title">{{class_list[index].title}}</view>
         <view 
           class="goods-item" 
-          wx:for="{{good}}" 
+          wx:for="{{good}}"
           wx:for-index="item-index"
+          wx:key="index"
           bindtap="clickGoods"
+          data-good="{{item}}"
+          bindtap="showModal"
         >
             <image src="{{item.images}}"></image>
             <view class="right">
@@ -45,5 +49,17 @@
     </scroll-view>
     
   </view>
-  <goods-detailed class="goods-detailed"></goods-detailed>
+  <goods-detailed 
+  class="goods-detailed" 
+  bind:hideModal="hideModal"
+  bind:checkBags="checkBags"
+  good="{{selectGood}}"
+  wx:if="{{showModal}}"
+  ></goods-detailed>
 </view>
+<shopping-bag wx:if="{{showBags}}" showBagsList="{{showBagsList}}" bind:openBagsList="openBagsList"></shopping-bag>
+<view 
+  wx:if="{{showModal || showBagsList}}" 
+  class="mask" 
+  bindtap="hideModal"
+></view>

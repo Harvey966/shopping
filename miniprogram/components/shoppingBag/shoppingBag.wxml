@@ -1,0 +1,51 @@
+
+<form catchsubmit="addOrder">
+<view class="bag-container" hidden="{{!showBags}}">
+    <view class="header">
+        <div class="left">
+            <checkbox value="all">全选</checkbox>
+        </div>
+        <div class="clear">
+            <image></image>
+            <view>清空</view>
+        </div>
+    </view>
+    <checkbox-group class="list" name="checkbox">
+        <view
+         class="item"
+         wx:for="{{bags}}"
+         wx:key="index"
+        >
+            <view class="goods">
+                <checkbox 
+                    value="{{index}}" 
+                    class="check"
+                    checked="{{item.checked===1}}">
+                </checkbox>
+                <image src="{{item.images}}"></image>
+                <view class="detail">
+                    <view class="title">{{item.title}}</view>
+                    <view class="shorthand">{{item.shorthand}}</view>
+                    <view class="price">¥{{item.price}}</view>
+                </view>
+            </view>
+            <view class="count-container">
+                <view class="type" bindtap="reduceCount">-</view>
+                <view class="count-title">{{item.count}}</view>
+                <view class="type" bindtap="addCount">+</view>
+            </view>
+        </view>
+    </checkbox-group>
+</view>
+<view class="fixed">
+    <view class="left" bindtap="showList">
+        <view class="icon">
+            <image src="../../images/index/good-icon.png"></image>
+            <view class="count">{{bags.length}}</view>
+        </view>
+        <view class="total-price">¥{{totalMoney}}</view>
+    </view>
+    <button formType="submit" class="right">去结算</button>
+</view>
+
+</form>

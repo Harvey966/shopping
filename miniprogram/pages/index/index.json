@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-      "goods-detailed":"../../components/goods/goods"
+      "goods-detailed":"../../components/goods/goods",
+      "shopping-bag":"../../components/shoppingBag/shoppingBag"
   }
 }
