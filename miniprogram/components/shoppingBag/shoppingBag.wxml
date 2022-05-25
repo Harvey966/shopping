@@ -3,14 +3,24 @@
 <view class="bag-container" hidden="{{!showBags}}">
     <view class="header">
         <div class="left">
-            <checkbox value="all">全选</checkbox>
+            <checkbox-group bindchange="changeAll">
+                <checkbox 
+                    value="all" 
+                    checked="{{allSelected}}" 
+                    color="red"
+                >全选</checkbox>
+            </checkbox-group>
         </div>
         <div class="clear">
             <image></image>
             <view>清空</view>
         </div>
     </view>
-    <checkbox-group class="list" name="checkbox">
+    <checkbox-group 
+        class="list" 
+        name="checkbox"
+        bindchange="checkboxChange"
+    >
         <view
          class="item"
          wx:for="{{bags}}"
@@ -20,7 +30,9 @@
                 <checkbox 
                     value="{{index}}" 
                     class="check"
-                    checked="{{item.checked===1}}">
+                    checked="{{item.checked===1}}"
+                    color="red"
+                >
                 </checkbox>
                 <image src="{{item.images}}"></image>
                 <view class="detail">
@@ -30,9 +42,17 @@
                 </view>
             </view>
             <view class="count-container">
-                <view class="type" bindtap="reduceCount">-</view>
+                <view 
+                    class="type"
+                    bindtap="reduceCount"
+                    data-index="{{index}}"
+                >-</view>
                 <view class="count-title">{{item.count}}</view>
-                <view class="type" bindtap="addCount">+</view>
+                <view 
+                    class="type"
+                    bindtap="addCount"
+                    data-index="{{index}}"
+                >+</view>
             </view>
         </view>
     </checkbox-group>

@@ -35,7 +35,6 @@ Page({
     wx.cloud.callFunction({
       name:"getAllGoods"
     }).then(res=>{
-      console.log("全部商品",res);
       this.setData({
         goods:res.result
       })
@@ -130,7 +129,6 @@ Page({
       })
       .then(res => {
           let filtRes = res.map((v)=> v-res[0])
-          console.log("所有高度",filtRes);
         this.setData({
             allTop:filtRes
         })

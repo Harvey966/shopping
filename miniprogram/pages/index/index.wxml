@@ -57,7 +57,11 @@
   wx:if="{{showModal}}"
   ></goods-detailed>
 </view>
-<shopping-bag wx:if="{{showBags}}" showBagsList="{{showBagsList}}" bind:openBagsList="openBagsList"></shopping-bag>
+<shopping-bag 
+wx:if="{{showBags}}" 
+showBagsList="{{showBagsList}}" bind:openBagsList="openBagsList"
+bind:checkBags="checkBags"
+></shopping-bag>
 <view 
   wx:if="{{showModal || showBagsList}}" 
   class="mask" 

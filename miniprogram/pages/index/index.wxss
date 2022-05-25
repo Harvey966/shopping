@@ -96,6 +96,7 @@
 .goods-detailed {
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 .mask {
   position: absolute;
