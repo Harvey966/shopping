@@ -29,6 +29,11 @@ Page({
   onLoad(){
     //登陆信息
     this.onLoadLogin()
+    wx.cloud.callFunction({
+        name:'getCatchNum'
+    }).then(res=>{
+        console.log("取单号",res);
+    })
   },
   async onShow(){
       let res1 = await wx.cloud.callFunction({
@@ -92,7 +97,7 @@ Page({
     const demo = {
         _openid:openid,
         bags:[],//购物车商品列表
-        address:{},//收货地址
+        delivery_address:{},//收货地址
         vip:false,
         new:true
     }

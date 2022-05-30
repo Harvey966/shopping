@@ -1,8 +1,17 @@
 <view class="summit-order">
     <view class="user-info box-container">
-        <view class="address"></view>
-        <view class="phone box">
-            <view class="title">预留电话</view>
+        <view class="address box" wx:if="{{waysIndex==1}}" bindtap="navToAdress">
+            <view class="title-container">
+                <view class="title">{{delivery_address.phone?delivery_address.address+delivery_address.address_name:'请完善收货地址'}}</view>
+                <view class="right">></view>
+            </view>
+            <view class="name-container">
+                <viwe class="name">{{delivery_address.phone?delivery_address.name:''}}</viwe>
+                <view class="phone">{{delivery_address.phone?delivery_address.phone:''}}</view>
+            </view>
+        </view>
+        <view wx:if="{{waysIndex==0}}" class="phone box" >
+            <view class="title" >预留电话</view>
             <view class="detail"><input type="text" placeholder="请填入手机号"/></view>
         </view>
         <view class="way box">
@@ -32,7 +41,7 @@
             <view class="price">¥{{item.price}}</view>
         </view>
         <view class="total-price">
-            <view class="price">{{totalPrice}}</view>
+            <view class="price">{{total_price}}</view>
         </view>
     </view>
     <view class="note box-container" bindtap="navToNote">
@@ -42,8 +51,8 @@
     <view class="placeholder"></view>
     <view class="bottom-button">
         <view class="total-price">
-            ¥{{totalPrice}}
+            ¥{{total_price}}
         </view>
-        <button >提交支付</button>
+        <button bindtap="clickOrder">提交支付</button>
     </view>
 </view>

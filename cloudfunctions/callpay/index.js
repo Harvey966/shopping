@@ -12,9 +12,9 @@ exports.main = async (event, context) => {
     "envId": "cloud1-8gwbqvbh5c0a5f20",
     "subMchId" : "1625307450",
     "nonceStr": event.nonceStr,
-    "body" : event.order.good.title,
+    "body" : event.order.goods[0].title,
     "outTradeNo" : event.outTradeNo,
-    "totalFee" : event.order.total_money*100,
+    "totalFee" : event.order.total_price*100,
     "spbillCreateIp" : "192.168.1.1",
     "tradeType":"JSAPI",
     "openid":event.openid

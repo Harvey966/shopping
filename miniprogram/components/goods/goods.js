@@ -23,7 +23,8 @@ Component({
           images:this.properties.good.images,
           shorthand,
           count:this.data.count,
-          checked:1
+          checked:1,
+          ways_index:this.properties.good.ways_index
       }
       // 全局加购物袋商品
       app.globalData.user.bags.push(bag)

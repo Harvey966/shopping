@@ -24,6 +24,7 @@ Component({
         this.setData({
             bags,
         })
+        console.log("bags",bags);
         this.calculatePrice()
     },
     methods: {
@@ -39,8 +40,10 @@ Component({
             })
         },
         addOrder(e){
+            let index=e.detail.value.checkbox[0]
+            console.log("way",this.data.bags[index]);
             wx.navigateTo({
-              url: `../../pages/summitOrder/index?bags=${e.detail.value.checkbox}`,
+              url: `../../pages/summitOrder/index?bags=${e.detail.value.checkbox}&way_index=&${this.data.bags[index].ways_index}`,
             })
         },
         showList(){

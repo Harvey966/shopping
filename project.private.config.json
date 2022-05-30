@@ -35,6 +35,13 @@
                     "query": "type=1",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/address/address",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

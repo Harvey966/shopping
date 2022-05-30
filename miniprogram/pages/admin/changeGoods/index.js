@@ -23,6 +23,8 @@ Component({
     class:-1,
     class_list:[],
     attr_detail:[],
+    ways:['门店就餐','送餐上门'],
+    ways_index:-1
   },
 
   /**
@@ -120,6 +122,11 @@ Component({
             class:e.detail.value
         })
     },
+    waysChange(e){
+        this.setData({
+            ways_index:e.detail.value
+        })
+    },
     // 上传新图片
     chooseImage(){
         wx.chooseImage({
@@ -158,7 +165,7 @@ Component({
       wx.showLoading({
         title: '',
       })
-      if(this.data.class==-1 || this.data.title==='' || this.data.price==='' || this.data.images.length===0){
+      if(this.data.class==-1 || this.data.title==='' || this.data.price==='' || this.data.images.length===0 || this.data.ways_index===-1){
           wx.showToast({
             title: '数据不完整',
             icon:'error'
@@ -173,6 +180,7 @@ Component({
         class:this.data.class,
         class_sort_num:new Date().getTime(),
         attr_detail:this.data.attr_detail,
+        ways_index:this.data.ways_index,
       }
       console.log('data',data);
       let res= await db.collection("goods").add(

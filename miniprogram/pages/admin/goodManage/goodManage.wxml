@@ -32,7 +32,6 @@
           wx:for="{{goodsList[activeNum]}}"
           wx:key="index"
           bindtap="clickGoods"
-            
           data-good="{{item}}"
         >
             <image src="{{item.images}}"></image>

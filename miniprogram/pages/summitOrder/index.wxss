@@ -1,5 +1,7 @@
 .summit-order {
   background-color: #F7F7F7;
+  height: 100vh;
+  padding-top: 20rpx;
 }
 .summit-order .box-container {
   width: 93%;
@@ -9,17 +11,49 @@
   box-sizing: border-box;
   padding: 20rpx;
 }
+.summit-order .user-info {
+  margin-top: 0px;
+}
 .summit-order .user-info .title {
   font-size: 28rpx;
-}
-.summit-order .user-info .address {
-  height: 300rpx;
 }
 .summit-order .user-info .box {
   border-bottom: 1rpx solid #F1F1F1;
   padding: 30rpx 0;
   display: flex;
   justify-content: space-between;
+}
+.summit-order .user-info .address {
+  display: block;
+}
+.summit-order .user-info .address .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summit-order .user-info .address .title-container .title {
+  font-size: 40rpx;
+}
+.summit-order .user-info .address .title-container .title::before {
+  content: "送餐地址";
+  background-color: #ee5a46;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 2rpx 5rpx;
+  margin-right: 5rpx;
+}
+.summit-order .user-info .address .title-container .right {
+  color: #B9B9B9;
+}
+.summit-order .user-info .address .name-container {
+  display: flex;
+  color: #BEBDBD;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  font-weight: 300;
+}
+.summit-order .user-info .address .name-container .name {
+  margin-right: 20rpx;
 }
 .summit-order .user-info .phone .title {
   font-size: 28rpx;
