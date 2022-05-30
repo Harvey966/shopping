@@ -8,7 +8,18 @@ const db = cloud.database({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-    let res= await db.collection('goods').where({}).get()
-    return res.data 
+    let classRes = await db.collection('other').where({
+        type:'class'
+    }).get()
+    let {class_list} = classRes.data[0]
+    console.log('class_list',class_list);
+    Promise.all()
+    let result=await Promise.all(class_list.map((v,index)=>{
+        return db.collection('goods').where({
+            class:String(index)
+        }).get()
+    }))
+    
+    return result.map(v=>v.data)
       
 }

@@ -1,0 +1,70 @@
+.change-goods {
+  padding: 20rpx;
+}
+.box {
+  display: flex;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.box .title {
+  margin-right: 20rpx;
+  font-weight: 500;
+}
+.box input {
+  border: 1px solid #ccc;
+  padding: 10rpx;
+}
+.box .button {
+  height: 70rpx;
+  width: 240rpx ;
+  border: 1px solid #ccc;
+  background-color: #E83527;
+  color: #fff;
+}
+.box .img {
+  height: 150rpx;
+  width: 150rpx;
+}
+.box .input {
+  border: 1px solid #ccc;
+  padding: 10rpx;
+}
+.box .picker {
+  color: red;
+}
+.attr {
+  display: flex;
+  flex-direction: column;
+}
+.attr .attr-container .attr-list {
+  display: flex;
+}
+.attr .attr-container .attr-list .attr-list-item {
+  background-color: #F8F8F8;
+  color: #424242;
+  margin-right: 20rpx;
+}
+.attr .attr-container .attr-list .delete-attr {
+  background-color: #E83527;
+  color: #fff;
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.attr .add-attr button {
+  background-color: #E83527;
+  color: #fff;
+  width: 200rpx;
+  font-size: 25rpx;
+}
+.btn-container {
+  display: flex;
+}
+.btn-container button {
+  background-color: #E83527;
+  padding: 5 10rpx !important;
+  margin: 10rpx 10rpx !important;
+  color: #fff;
+}

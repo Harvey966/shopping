@@ -11,7 +11,7 @@
                 >全选</checkbox>
             </checkbox-group>
         </div>
-        <div class="clear">
+        <div class="clear" bindtap="clear">
             <image></image>
             <view>清空</view>
         </div>
@@ -65,7 +65,7 @@
         </view>
         <view class="total-price">¥{{totalMoney}}</view>
     </view>
-    <button formType="submit" class="right">去结算</button>
+    <button bindtap="submit" formType="submit" class="right">去结算</button>
 </view>
 
 </form>

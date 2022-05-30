@@ -5,7 +5,7 @@
     </view>
   <view class="head">
     <view class="image-container">
-        <image class="image" src="../../images/head.png">
+        <image class="image" src="{{good.images}}">
         </image>
     </view>
     <view class="title">{{good.title}}</view>
@@ -28,6 +28,7 @@
               wx:for="{{attr.list}}"
               value="{{item}}"
               wx:key="item"
+              color="red"
               checked="{{index==0}}"
             >
             {{item}}</radio></label>

@@ -32,7 +32,6 @@
           wx:for="{{good}}"
           wx:for-index="item-index"
           wx:key="index"
-          bindtap="clickGoods"
           data-good="{{item}}"
           bindtap="showModal"
         >

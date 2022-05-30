@@ -1,0 +1,23 @@
+.note-container{
+    background-color: #F7F7F7;
+    height: 100vh;
+    padding-top: 20rpx;
+}
+.input{
+    padding: 20rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    width: 95%;
+    background-color: #fff;
+    margin: 0 auto;
+    height: 240rpx;
+
+}
+button{
+    width: 700rpx;
+    margin: 0 auto;
+    background-color: #E73B2A;
+    color: #EFE3D8;
+    margin-top: 30rpx;
+    border-radius: 30rpx;
+}

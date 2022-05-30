@@ -21,7 +21,8 @@ App({
         _openid:'',
         bags:[],//购物车商品列表
         delivery_address:{},//收货地址
-      }
+      },
+      note:""
     }
   }
 })

@@ -1,0 +1,144 @@
+.summit-order {
+  background-color: #F7F7F7;
+}
+.summit-order .box-container {
+  width: 93%;
+  margin: 20rpx auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.summit-order .user-info .title {
+  font-size: 28rpx;
+}
+.summit-order .user-info .address {
+  height: 300rpx;
+}
+.summit-order .user-info .box {
+  border-bottom: 1rpx solid #F1F1F1;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+.summit-order .user-info .phone .title {
+  font-size: 28rpx;
+}
+.summit-order .user-info .phone .detail input {
+  width: 240rpx;
+}
+.summit-order .user-info .way {
+  display: flex;
+}
+.summit-order .user-info .way .title {
+  color: #D0483E;
+}
+.summit-order .user-info .way .detail {
+  width: 240rpx;
+}
+.summit-order .goods-container .goods {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35rpx;
+}
+.summit-order .goods-container .goods image {
+  width: 102rpx;
+  height: 102rpx;
+}
+.summit-order .goods-container .goods .detail-container {
+  display: flex;
+}
+.summit-order .goods-container .goods .detail {
+  margin-left: 25rpx;
+}
+.summit-order .goods-container .goods .detail .title {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.summit-order .goods-container .goods .detail .shorthand {
+  font-size: 20rpx;
+  color: #828282;
+  font-weight: 300;
+}
+.summit-order .goods-container .goods .detail .count {
+  font-size: 25rpx;
+  color: #B20000;
+  font-weight: 400;
+}
+.summit-order .goods-container .goods .price {
+  color: #D20000;
+  font-weight: 400;
+  font-size: 30rpx;
+}
+.summit-order .goods-container .goods:nth-last-child(2) {
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #F6F6F6;
+}
+.summit-order .goods-container .total-price {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 35rpx;
+}
+.summit-order .goods-container .total-price .price {
+  font-size: 40rpx;
+}
+.summit-order .goods-container .total-price .price::before {
+  content: '小计 ¥ ';
+  font-size: 30rpx;
+  font-weight: 350;
+}
+.summit-order .note {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.summit-order .note .message {
+  color: #A4A4A4;
+  margin-right: 10rpx;
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: end;
+}
+.summit-order .note .high-message {
+  color: #3d3d3d;
+  margin-right: 10rpx;
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: end;
+}
+.summit-order .placeholder {
+  width: 100%;
+  height: 200rpx;
+  background-color: #F7F7F7;
+}
+.summit-order .bottom-button {
+  position: fixed;
+  bottom: 0;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  width: 100%;
+  box-shadow: 0 -4rpx 5px #d8d8d8;
+  background-color: #ffffff;
+}
+.summit-order .bottom-button .total-price {
+  font-size: 38rpx;
+  color: #D50000;
+}
+.summit-order .bottom-button .total-price::before {
+  content: '合计 ';
+  color: #3B3B3B;
+  font-size: 28rpx;
+}
+.summit-order .bottom-button button {
+  background-color: #E73C27;
+  width: 250rpx;
+  color: #FDECE8;
+  font-size: 27rpx;
+  margin-right: 80rpx;
+  border-radius: 50rpx;
+}

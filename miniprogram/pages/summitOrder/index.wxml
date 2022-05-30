@@ -1,0 +1,49 @@
+<view class="summit-order">
+    <view class="user-info box-container">
+        <view class="address"></view>
+        <view class="phone box">
+            <view class="title">预留电话</view>
+            <view class="detail"><input type="text" placeholder="请填入手机号"/></view>
+        </view>
+        <view class="way box">
+            <view class="title">就餐方式*</view>
+            <picker
+                class="detail"
+                mode="selector"
+                range="{{ways}}"
+                value="{{waysIndex}}"
+                bindchange="waysChange"
+                disabled="true"
+            >
+                <view class="picker">{{ways[waysIndex]}}</view>
+            </picker>
+        </view>
+    </view>
+    <view class="goods-container box-container">
+        <view class="goods" wx:for="{{goodsList}}" wx:key="index">
+            <view class="detail-container">
+                <image src="{{item.images}}"></image>
+                <view class="detail">
+                <view class="title">{{item.title}}</view>
+                <view class="shorthand">{{item.shorthand}}</view>
+                <view class="count">x{{item.count}}</view>
+            </view>
+            </view>
+            <view class="price">¥{{item.price}}</view>
+        </view>
+        <view class="total-price">
+            <view class="price">{{totalPrice}}</view>
+        </view>
+    </view>
+    <view class="note box-container" bindtap="navToNote">
+        <view class="title">备注</view>
+        <view class="{{note===''?'message':'high-message'}}" >{{note===''?'口味、偏好等要求 >':note}}</view>
+    </view>
+    <view class="placeholder"></view>
+    <view class="bottom-button">
+        <view class="total-price">
+            ¥{{totalPrice}}
+        </view>
+        <button >提交支付</button>
+    </view>
+</view>

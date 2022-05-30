@@ -1,0 +1,62 @@
+<view class="change-goods">
+  <view class="box">
+    <view class="title">标题:</view>
+    <input type="text" name="input" placeholder="请输入标题" model:value="{{title}}" /> 
+  </view>
+  <view class="box">
+    <view class="title">主图:</view>
+    <button class="button" bindtap="chooseImage">选择图片</button>
+    <image 
+        class="img" 
+        src="{{images}}"
+    ></image>
+  </view>
+
+  <view class="box">
+    <view class="title">商品描述:</view>
+    <textarea
+     class="input" 
+    model:value="{{describe}}"
+     confirm-type="done" placeholder="请输入口味、偏好等要求"/>
+  </view>
+  <view class="class box">
+    <view class="title">分类：</view>
+    <picker
+                class="detail"
+                mode="selector"
+                range="{{class_list}}"
+                range-key="title"
+                value="{{class}}"
+                bindchange="classChange"
+            >
+                <view class="picker">{{class===-1?"请选择":class_list[class].title}}</view>
+    </picker>
+  </view>
+  <view class="attr box">
+    <view class="title">属性：</view>
+    <view class="add-attr">
+        <button bindtap="addAttr">添加属性</button>
+    </view>
+    <view 
+        class="attr-container" 
+        wx:for="{{attr_detail}}" 
+        wx:for-item="item" 
+        wx:key="index"
+    >
+        <view class="name">{{item.title}}:</view>
+        <view class="attr-list">
+            <input bindinput="changeAttr" value="{{(item.list)}}" data-index="{{index}}"></input>
+            <view class="delete-attr" bindtap="deleteAttr" data-index="{{index}}">X</view>
+        </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">价格:</view>
+    <input type="digit" name="input" placeholder="请输入价格" model:value="{{price}}" />
+  </view>
+  <view class="btn-container box">
+    <button wx:if="{{type==='1'}}" bindtap="add">添加</button>
+    <button wx:if="{{type==='0'}}" bindtap="delete">删除</button>
+    <button wx:if="{{type==='0'}}" bindtap="change">修改</button>
+  </view>
+</view> 

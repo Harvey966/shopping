@@ -1,0 +1,154 @@
+.summit-order{
+    background-color: #F7F7F7;
+    .box-container{
+        width: 93%;
+        margin: 20rpx auto;
+        background-color: #ffffff; 
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 20rpx;
+    }
+    .user-info{
+        .title{
+            font-size: 28rpx;
+        }
+        .address{
+            height: 300rpx;
+        }
+        .box{
+            border-bottom: 1rpx solid #F1F1F1;
+            padding: 30rpx 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .phone{
+            .title{
+                font-size: 28rpx;
+            }
+            .detail{
+                input{
+                    width: 240rpx;
+                }
+            }
+        }
+        .way{
+            display: flex;
+            .title{
+                color: #D0483E;
+            }
+            .detail{
+                width: 240rpx;
+            }
+        }
+    }
+    .goods-container{
+        .goods{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 35rpx;
+            image{
+                width: 102rpx;
+                height: 102rpx;
+            }
+            .detail-container{
+                display: flex;
+            }
+            .detail{
+                margin-left: 25rpx;
+                .title{
+                    font-size: 30rpx;
+                    font-weight: 500;
+                }
+                .shorthand{
+                    font-size: 20rpx;
+                    color: #828282;
+                    font-weight: 300;
+                }
+                .count{
+                    font-size: 25rpx;
+                    color: #B20000;
+                    font-weight: 400;
+                }
+            }
+            .price{
+                color: #D20000;
+                font-weight: 400;
+                font-size: 30rpx;
+            }
+        }
+        .goods:nth-last-child(2){
+            padding-bottom: 30rpx;
+            border-bottom: 1px solid #F6F6F6;
+        }
+        .total-price{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 35rpx;
+            
+            .price{
+                font-size: 40rpx;
+            }
+            .price::before{
+                content: '小计 ¥ ';
+                font-size: 30rpx;
+                font-weight: 350;
+            }
+        }
+        
+    }
+    .note{
+        display: flex;
+        justify-content: space-between;
+        font-size: 28rpx;
+        .message{
+            color: #A4A4A4;
+            margin-right: 10rpx;
+            width: 500rpx;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            text-align: end;
+        }
+        .high-message{
+            color: #3d3d3d;
+            margin-right: 10rpx;
+            width: 500rpx;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            text-align: end;
+        }
+    }
+    .placeholder{
+        width: 100%;
+        height: 200rpx;
+        background-color: #F7F7F7;
+    }
+    .bottom-button{
+        position: fixed;
+        bottom: 0;
+        height: 120rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30rpx;
+        width: 100%;
+        box-shadow: 0 -4rpx 5px #d8d8d8;
+        background-color: #ffffff;
+        .total-price{
+            font-size: 38rpx;
+            color: #D50000;
+        }
+        .total-price::before{
+            content: '合计 ';
+            color: #3B3B3B;
+            font-size: 28rpx;
+        }
+        button{
+            background-color: #E73C27;
+            width: 250rpx;
+            color: #FDECE8;
+            font-size: 27rpx;
+            margin-right: 80rpx;
+            border-radius: 50rpx;
+        }
+    }
+}

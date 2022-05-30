@@ -1,4 +1,4 @@
-const {class_list,goodsList} =require('./config')
+// const {class_list,goodsList} =require('./config')
 
 //index.js
 const app = getApp()
@@ -8,8 +8,8 @@ Page({
   data:{
     image:['../../images/index/1.jpg','../../images/index/2.jpg','../../images/index/3.jpg'],
     goods:[],
-    class_list:class_list || [],
-    goodsList,
+    class_list:[],
+    goodsList:[],
     
     // 锚点导航
     activeNum:0, //导航栏选择的位置
@@ -29,16 +29,18 @@ Page({
   onLoad(){
     //登陆信息
     this.onLoadLogin()
-    
   },
-  onShow(){
-    wx.cloud.callFunction({
-      name:"getAllGoods"
-    }).then(res=>{
-      this.setData({
-        goods:res.result
+  async onShow(){
+      let res1 = await wx.cloud.callFunction({
+          name:'getClassList'
       })
-      app.globalData.goods=res.result
+      let res2 = await wx.cloud.callFunction({
+      name:"getAllGoods"
+    })
+    console.log(res1.result[0]);
+    this.setData({
+        class_list: res1.result[0].class_list,
+        goodsList: res2.result,
     })
     this.checkBags()
     this.getAllTop()
@@ -58,7 +60,12 @@ Page({
                 showBags:false
             })
         }
-
+    }
+    else {
+        this.setData({
+            showBagsList:false,
+            showBags:false
+        })
     }
   },
   //判断有没有找到这个用户，若没有，则新建它的数据

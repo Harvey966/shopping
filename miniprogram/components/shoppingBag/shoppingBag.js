@@ -39,7 +39,9 @@ Component({
             })
         },
         addOrder(e){
-            console.log(e.detail.value);
+            wx.navigateTo({
+              url: `../../pages/summitOrder/index?bags=${e.detail.value.checkbox}`,
+            })
         },
         showList(){
             this.triggerEvent('openBagsList')
@@ -49,13 +51,12 @@ Component({
             let newBags = this.data.bags.concat()
             newBags[index].count--;
             if(newBags[index].count<1)
-                newBags[index].count=1
+                newBags=newBags.slice(0,index).concat(newBags.slice(index+1,newBags.length))
             this.undataBags(newBags)
         },
         addCount(e){
             let index = e.target.dataset.index
             let newBags = this.data.bags.concat()
-            console.log(newBags[index]);
             newBags[index].count++;
             this.undataBags(newBags)
         },
@@ -66,12 +67,14 @@ Component({
             },()=>{
                 this.calculatePrice()
             })
+            this.triggerEvent('checkBags')
             wx.cloud.callFunction({
                 name:'updateUser',
                 data:globalData.user
-            }).then(()=>{
-                this.triggerEvent('checkBags')
             })
+        },
+        clear(){
+            this.undataBags([])
         },
         checkboxChange(e){
             let res=true
@@ -95,6 +98,6 @@ Component({
                 })
             }
             this.undataBags(newBags)
-        }
+        },
     }
 })

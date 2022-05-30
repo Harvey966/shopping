@@ -33,7 +33,7 @@ Component({
     },
     toGoodManage(){
       wx.navigateTo({
-        url: '../goodManage/goodManage',
+        url: '../admin/goodManage/goodManage',
       })
     },
     toOrderManage(){

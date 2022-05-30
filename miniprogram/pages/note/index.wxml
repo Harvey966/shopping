@@ -1,0 +1,7 @@
+<view class="note-container">
+    <textarea
+    bindinput="changeWords" class="input" 
+    value="{{note}}"
+     confirm-type="done" placeholder="请输入口味、偏好等要求"/>
+    <button bindtap="clickButton">确定</button>
+</view>

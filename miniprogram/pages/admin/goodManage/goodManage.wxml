@@ -1,0 +1,53 @@
+<view class="good-manage">
+    <view class="main">
+    <view class="nav">
+      <view  
+        wx:for="{{class_list}}" 
+        class="nav-item {{activeNum==index?'active':''}}"
+        bindtap="goAnchor"
+        data-index="{{index}}"
+        wx:key="index"
+      >
+        <view class="title" bindtap="goAnchor"
+        data-index="{{index}}">{{item.title}}</view>
+        <view class="operate">
+            <view class="delete button" bindtap="deleteClass"
+        data-index="{{index}}">删除</view>
+                <view class="up button" bindtap="upClass"
+            data-index="{{index}}">上移</view>
+        </view>
+      </view>
+      <view class="add-class" bindtap="addClass">
+        增加分类
+      </view>
+    </view>
+    <scroll-view
+      class="content"
+      scroll-y="true"
+      bindscroll="scroll" 
+      scroll-top="{{scrollTop}}"
+    >
+        <view 
+          class="goods-item" 
+          wx:for="{{goodsList[activeNum]}}"
+          wx:key="index"
+          bindtap="clickGoods"
+            
+          data-good="{{item}}"
+        >
+            <image src="{{item.images}}"></image>
+            <view class="right">
+              <view class="title">{{item.title}}</view>
+              <view class="des">{{item.describe}}</view>
+              <view class="price">{{item.price}}</view>
+              <button>选规格</button>
+            </view>
+            
+        </view>
+
+    </scroll-view>
+  </view>
+  <view class="bottom-button">
+    <button bindtap="addGoods">添加商品</button>
+</view>
+</view>

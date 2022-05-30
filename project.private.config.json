@@ -9,27 +9,31 @@
                     "query": ""
                 },
                 {
-                    "name": "pages/myOrderList/myOrderList",
-                    "pathName": "pages/myOrderList/myOrderList",
+                    "name": "pages/summitOrder",
+                    "pathName": "pages/summitOrder/index",
                     "query": "",
+                    "launchMode": "default",
                     "scene": null
                 },
                 {
-                    "name": "pages/goodManage/goodManage",
-                    "pathName": "pages/goodManage/goodManage",
+                    "name": "note",
+                    "pathName": "pages/note/index",
                     "query": "",
+                    "launchMode": "default",
                     "scene": null
                 },
                 {
-                    "name": "pages/orderManage/orderManage",
-                    "pathName": "pages/orderManage/orderManage",
+                    "name": "",
+                    "pathName": "pages/admin/goodManage/goodManage",
                     "query": "",
+                    "launchMode": "default",
                     "scene": null
                 },
                 {
-                    "name": "pages/orderForm/orderForm",
-                    "pathName": "pages/orderForm/orderForm",
-                    "query": "",
+                    "name": "",
+                    "pathName": "pages/admin/changeGoods/index",
+                    "query": "type=1",
+                    "launchMode": "default",
                     "scene": null
                 }
             ]
