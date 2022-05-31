@@ -10,7 +10,7 @@ const db = cloud.database({
 exports.main = async (event, context) => {
     let res= await db.collection('order').doc(event.id).update({
         data:{
-          type:event.type
+          ...event
         }
       })
     return res

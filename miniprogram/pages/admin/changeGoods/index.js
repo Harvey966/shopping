@@ -49,6 +49,7 @@ Component({
         let data = res.data
         console.log("获取的data",res);
         this.setData({
+            data,
           type:option.type,
           title:data.title,
           price:data.price,

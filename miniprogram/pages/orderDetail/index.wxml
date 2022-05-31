@@ -1,0 +1,72 @@
+<view class="summit-order">
+    <view class="order-container box-container">
+        <view class="title">
+            {{type===0?'待支付':type==1?'备餐中':type==2?waysIndex==='0'?'请取餐':'送货中':type===3?'已完成':'已关闭'}}
+        </view>
+        <view wx:if="{{type===1&&waysIndex=='0'}}" class="catch-num">
+            {{order.catch_num}}
+        </view>
+        <view wx:if="{{type===1&&waysIndex=='0'}}" class="catch-num-word">
+            取单号
+        </view>
+        <view wx:if="{{type==0}}" class="button-container">
+            <button bindtap="cancelOrder">取消订单</button>
+            <button bindtap="payOrder">立即支付</button>
+        </view>
+    </view>
+    <view class="goods-container box-container">
+        <view class="box-title">商品信息</view>
+        <view class="goods" wx:for="{{goodsList}}" wx:key="index">
+            <view class="detail-container">
+                <image src="{{item.images}}"></image>
+                <view class="detail">
+                <view class="title">{{item.title}}</view>
+                <view class="shorthand">{{item.shorthand}}</view>
+                <view class="count">x{{item.count}}</view>
+            </view>
+            </view>
+            <view class="price">¥{{item.price}}</view>
+        </view>
+        <view class="total-price">
+            <view class="price">{{total_price}}</view>
+        </view>
+    </view>
+    <view class="note box-container" bindtap="navToNote">
+        <view class="title">备注</view>
+        <view class="high-message" >{{note}}</view>
+    </view>
+    <view class="user-info box-container">
+        <view class="box-title">订单信息</view>
+        <view class="address box" wx:if="{{waysIndex==1}}" bindtap="navToAdress">
+            <view class="title-container">
+                <view class="title">{{delivery_address.address+delivery_address.address_name}}</view>
+            </view>
+            <view class="name-container">
+                <viwe class="name">{{delivery_address.phone?delivery_address.name:''}}</viwe>
+                <view class="phone">{{delivery_address.phone?delivery_address.phone:''}}</view>
+            </view>
+        </view>
+        <view wx:if="{{waysIndex==0}}" class="phone box" >
+            <view class="title" >预留电话</view>
+            <view class="detail"><input type="text" disabled="true" value="{{delivery_address.phone}}" placeholder="请填入手机号"/></view>
+        </view>
+        <view class="way box">
+            <view class="title">就餐方式*</view>
+            <picker
+                class="detail"
+                mode="selector"
+                range="{{ways}}"
+                value="{{waysIndex}}"
+                bindchange="waysChange"
+                disabled="true"
+            >
+                <view class="picker">{{ways[waysIndex]}}</view>
+            </picker>
+        </view>
+        <view class="box">
+            <view class="title" >创建时间</view>
+            <view class="detail">{{order.order_time}}</view>
+        </view>
+    </view>
+    <view class="placeholder"></view>
+</view>

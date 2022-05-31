@@ -1,0 +1,213 @@
+.summit-order{
+    background-color: #F7F7F7;
+    height: 100vh;
+    padding-top: 20rpx;
+    .order-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 400rpx;
+        .title{
+            font-weight: 500;
+            font-size: 35rpx;
+        }
+        .catch-num{
+            margin-top: 10rpx;
+            font-size: 55rpx;
+            font-weight: 600;
+        }
+        .catch-num-word{
+            font-size: 30rpx;
+            font-weight: 300;
+        }
+        .button-container{
+            display: flex;
+            margin-top: 40rpx;
+            button{
+                width: 160rpx;
+                font-size: 26rpx;
+                padding: 10rpx 20rpx;
+            }
+            button:first-child{
+                background-color: #FFFFFF;
+                color: #717171;
+                border: 1px solid #e6e6e6;
+                margin-right: 10rpx;
+            }
+            button:last-child{
+                background-color: #E73B2A;
+                color: #FEF1E8;
+            }
+        }
+    }
+    .box-container{
+        width: 93%;
+        margin: 20rpx auto;
+        background-color: #ffffff; 
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 20rpx;
+        .box-title{
+            font-size: 35rpx;
+            border-bottom: 1rpx solid #F1F1F1;
+            padding-bottom: 20rpx;
+        }
+    }
+    .user-info{
+        margin-top: 0px;
+        .title{
+            font-size: 28rpx;
+        }
+        
+        .box{
+            border-bottom: 1rpx solid #F1F1F1;
+            padding: 30rpx 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .address{
+            display: block;
+            .title-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .title{
+                    font-size: 40rpx;
+                }
+                .title::before{
+                    content: "送餐地址";
+                    background-color: #ee5a46;
+                    color: #fff;
+                    font-size: 25rpx;
+                    padding: 2rpx 5rpx;
+                    margin-right: 5rpx;
+                }
+                .right{
+                    color: #B9B9B9;
+                }
+            }
+            .name-container{
+                display: flex;
+                color: #BEBDBD;
+                font-size: 30rpx;
+                line-height: 50rpx;
+                font-weight: 300;
+                .name{
+                    margin-right: 20rpx;
+                }
+            }
+        }
+        .phone{
+            .title{
+                font-size: 28rpx;
+            }
+            .detail{
+                input{
+                    width: 240rpx;
+                }
+            }
+        }
+        .way{
+            display: flex;
+            .title{
+                color: #D0483E;
+            }
+            .detail{
+                width: 240rpx;
+            }
+        }
+        .box{
+            .title{
+                font-size: 28rpx;
+                color: #A2A1A2;
+            }
+            .detail{
+                font-size: 28rpx;
+                color: #393939;
+            }
+        }
+    }
+    .goods-container{
+        .goods{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 35rpx;
+            margin-top: 20rpx;
+            image{
+                width: 102rpx;
+                height: 102rpx;
+            }
+            .detail-container{
+                display: flex;
+            }
+            .detail{
+                margin-left: 25rpx;
+                .title{
+                    font-size: 30rpx;
+                    font-weight: 500;
+                }
+                .shorthand{
+                    font-size: 20rpx;
+                    color: #828282;
+                    font-weight: 300;
+                }
+                .count{
+                    font-size: 25rpx;
+                    color: #B20000;
+                    font-weight: 400;
+                }
+            }
+            .price{
+                color: #D20000;
+                font-weight: 400;
+                font-size: 30rpx;
+            }
+        }
+        .goods:nth-last-child(2){
+            padding-bottom: 30rpx;
+            border-bottom: 1px solid #F6F6F6;
+        }
+        .total-price{
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 35rpx;
+            
+            .price{
+                font-size: 40rpx;
+            }
+            .price::before{
+                content: '合计 ¥ ';
+                font-size: 30rpx;
+                font-weight: 350;
+            }
+        }
+        
+    }
+    .note{
+        display: flex;
+        justify-content: space-between;
+        font-size: 28rpx;
+        .message{
+            color: #A4A4A4;
+            margin-right: 10rpx;
+            width: 500rpx;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            text-align: end;
+        }
+        .high-message{
+            color: #3d3d3d;
+            margin-right: 10rpx;
+            width: 500rpx;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            text-align: end;
+        }
+    }
+    .placeholder{
+        width: 100%;
+        height: 200rpx;
+        background-color: #F7F7F7;
+    }
+}

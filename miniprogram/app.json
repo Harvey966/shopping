@@ -9,7 +9,8 @@
         "pages/admin/goodManage/goodManage",
         "pages/admin/changeGoods/index",
         "pages/admin/orderManage/orderManage",
-        "pages/note/index"
+        "pages/note/index",
+        "pages/orderDetail/index"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",

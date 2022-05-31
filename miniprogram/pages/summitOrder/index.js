@@ -31,7 +31,6 @@ Component({
         let bags = option.bags.split(',')
         console.log('option',option);
         let res = bags.map(v=>app.globalData.user.bags[v])
-        console.log("最后结果",app.globalData.user);
         let price = 0
         res.forEach(v=>{
             price+=v.price*v.count
@@ -62,17 +61,27 @@ Component({
         address:app.globalData.user.delivery_address,
         goods:this.data.goodsList,
         type:0,
+        ways_index:this.data.waysIndex,
         total_price:this.data.total_price,
         note:this.data.note,
         order_time:new Date().format("yyyy-MM-dd hh:mm:ss")
       }
+      app.globalData.user.bags=[]
+      console.log('app.globalData.user',app.globalData.user);
+      await wx.cloud.callFunction({
+          name:"updateUser",
+          data: app.globalData.user
+          
+      })
       let addRes=await wx.cloud.callFunction({
           name:"addOrder",
           data:order
       })
       let newOrder=addRes.result
+      console.log("addOrder",newOrder)
       wx.hideLoading()
       // 获取调购买所需要调所有参数
+      console.log('order',order);
       const res = await wx.cloud.callFunction({
         name:"callpay",
         data:{
@@ -94,18 +103,20 @@ Component({
               name:'getCatchNum'
           })
           let catch_num = catchRes.result
-        await db.collection("order").doc(newOrder._id).update({
-          data:{
-            type:1,
-            catch_num,
-          }
+          wx.cloud.callFunction({
+            name:"changeOrder",
+            data:{
+                type:1,
+                catch_num:catch_num,
+                id:newOrder._id
+            }
         })
       }
       else{
         console.log("支付失败");
       }
       wx.navigateTo({
-        url: `../orderForm/orderForm?id=${newOrder._id}`,
+        url: `../orderDetail/index?id=${newOrder._id}`,
       })
     },
     openLocation(){

@@ -8,9 +8,15 @@ const db = cloud.database({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-    let res= await db.collection('order').where({
-        type:event.type
-      }).get()
+    let res;
+    if(event.hasOwnProperty('id')){
+        res= await db.collection('order').doc(event.id).get()
+    }
+    else{
+        res= await db.collection('order').where({
+            type:event.type
+          }).get()
+    }
     return res.data
       
 }
