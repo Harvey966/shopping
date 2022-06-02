@@ -26,10 +26,10 @@
                 mode="selector"
                 range="{{class_list}}"
                 range-key="title"
-                value="{{class}}"
+                value="{{class_index}}"
                 bindchange="classChange"
             >
-                <view class="picker">{{class===-1?"请选择":class_list[class].title}}</view>
+                <view class="picker">{{class_index===-1?"请选择":class_list[class_index].title}}</view>
     </picker>
   </view>
   <view class="ways box">

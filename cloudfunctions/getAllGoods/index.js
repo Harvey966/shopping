@@ -12,11 +12,9 @@ exports.main = async (event, context) => {
         type:'class'
     }).get()
     let {class_list} = classRes.data[0]
-    console.log('class_list',class_list);
-    Promise.all()
-    let result=await Promise.all(class_list.map((v,index)=>{
+    let result=await Promise.all(class_list.map((v)=>{
         return db.collection('goods').where({
-            class:String(index)
+            class:v.class_id
         }).get()
     }))
     

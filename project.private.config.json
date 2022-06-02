@@ -56,13 +56,6 @@
                     "query": "id=8f75309d6297fd410699805479260432",
                     "launchMode": "default",
                     "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/myOrderList/myOrderList",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
                 }
             ]
         }

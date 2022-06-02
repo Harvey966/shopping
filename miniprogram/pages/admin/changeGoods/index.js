@@ -24,7 +24,8 @@ Component({
     class_list:[],
     attr_detail:[],
     ways:['门店就餐','送餐上门'],
-    ways_index:-1
+    ways_index:-1,
+    class_index:-1
   },
 
   /**
@@ -120,10 +121,12 @@ Component({
     },
     classChange(e){
         this.setData({
-            class:e.detail.value
+            class:this.data.class_list[e.detail.value].class_id,
+            class_index:e.detail.value
         })
     },
     waysChange(e){
+        console.log();
         this.setData({
             ways_index:e.detail.value
         })
