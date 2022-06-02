@@ -1,7 +1,7 @@
-<view class="order-manage">
+<view class="order-list">
   <view class="nav-container" >
     <view 
-      class="nav-item {{type===index?'orangeStyle':''}}" 
+      class="nav-item {{typeIndex===index?'orangeStyle':''}}" 
       bindtap="changeType" 
       wx:for="{{mapType}}"
       wx:key="{{index+item}}"
@@ -11,33 +11,33 @@
     </view>
   </view>
   <view class="list-container">
-    <view class="order-item" wx:for="{{dataList}}">
-      <view class="header">
-        <view class="time">{{item.order_time}}</view>
-        <view class="status">{{mapType[type]}}</view>
+    <view class="order-item" wx:for="{{dataList}}" wx:key="{{item.id}}" bindtap="clickOrder" data-id="{{item._id}}">
+      <view class="header"  >
+        <view class="ways">{{item.ways_index=='1'?'外卖':'堂食'}}</view>
+        <view class="status">{{item.ways_index==1&&item.type==2?'送货中':statusMap[item.type]}}</view>
       </view>
-      <view class="content">
-        <image src="{{item.good.images[0]}}" class="icon"></image>
-        <view class="price">
-          <view class="title">{{item.good.title}}</view>
-          <view class="money">{{item.good.now_price}}*{{item.count}}</view>
-          <view class="total">总价:{{item.total_money}}</view>
-          
+      <view class="content"  >
+        <view class="goods-container">
+            <view class="goods-item" wx:for="{{item.goods}}" wx:for-item="goods_item" wx:for-index="goods_index"
+            wx:key="goods_index">
+                <view class="title">{{goods_item.title}}：</view>
+                <view class="shorthand">{{goods_item.shorthand}}</view>
+            </view>
         </view>
-      </view>
-      <view class="info">
-          <view class="name">{{item.address.name}}</view>
-          <view class="name">{{item.address.phone_number}}</view>
-          <view class="detail">{{item.address.address_detail}}</view>
-      </view>
-      <button bindtap="changeOrderType" data-id="{{item._id}}">修改订单状态</button>
+        <view wx:if="{{item.ways_index=='0'}}"  class="catch">
+            <view class="catch-num">
+                {{item.catch_num}}
+            </view>
+            <view class="catch-num-word">
+                取单号
+            </view>
+        </view>
+        <button class="already" 
+          wx:if="{{item.type==1}}"
+          catchtap="changeOrder" data-id="{{item._id}}" data-type="{{item.type}}">备好</button>
+        <button class="already" 
+        wx:if="{{item.type==2}}"catchtap="changeOrder" data-id="{{item._id}}" data-type="{{item.type}}">已取餐</button>
     </view>
   </view>
-  <view class="mask" wx:if="{{isMask}}" bindtap="clickMask"></view>
-  <view class="mask-container" wx:if="{{isMask}}">
-    <radio-group class="radio-container" bindchange="changeRadio">
-      <radio class="radio-item" wx:for="{{mapType}}" value="{{index}}">{{item}}</radio>
-    </radio-group>
-    <button bindtap="confirmType">确认修改</button>
-  </view>
+</view>
 </view>

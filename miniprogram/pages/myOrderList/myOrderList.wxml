@@ -17,11 +17,13 @@
         <view class="status">{{item.ways_index==1&&item.type==2?'送货中':statusMap[item.type]}}</view>
       </view>
       <view class="content"  >
+        <view class="goods-container">
         <view class="goods-item" wx:for="{{item.goods}}" wx:for-item="goods_item" wx:for-index="goods_index"
         wx:key="goods_index">
             <image src="{{goods_item.images}}" class="icon"></image>
             <view class="title">{{goods_item.title}}</view>
         </view>
+      </view>
         <view wx:if="{{item.ways_index=='0'&&item.type<3}}"  class="catch">
             <view class="catch-num">
                 {{item.catch_num}}

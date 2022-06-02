@@ -10,7 +10,7 @@
         position: sticky;
         top: 0rpx;
         padding-top: 20rpx;
-        height: 80rpx;
+        height: 60rpx;
         z-index: 10;
         background-color: #FFFFFF;
         .nav-item{
@@ -47,26 +47,21 @@
             .content{
                 display: flex;
                 justify-content: space-between;
-                margin-top: 50rpx;
+                margin-top: 10rpx;
                 align-items: center;
-                .goods-container{
-                    display: flex;
-                }
                 .goods-item{
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
-                    margin-right: 10rpx;
-                    .icon{
-                        width: 110rpx;
-                        height: 110rpx;
-                        border-radius: 10rpx;
-                    }
                     .title{
                         margin-top: 5rpx;
                         font-size: 26rpx;
-                        color: #A2A2A2;
+                        color: #000000;
                     }
+                    .shorthand{
+                        font-size: 26rpx;
+                        color: #E73B2C;
+                    }
+
                 }
                 .catch{
                     display: flex;
@@ -82,15 +77,15 @@
                         font-weight: 300;
                     }
                 }
-                .price{
-                    .total{
-                        font-weight: 500;
-                    }
-                    .count{
-                        margin-top: 5rpx;
-                        font-size: 26rpx;
-                        color: #A2A2A2;
-                    }
+                .already{
+                    border: 1px solid #ccc;
+                    padding: 6rpx 5rpx;
+                    font-size: 30rpx;
+                    border-radius: 10rpx;
+                    width: 130rpx;
+                    margin: 0;
+                    color: #fff;
+                    background-color: #E73B2C;
                 }
               }
           }

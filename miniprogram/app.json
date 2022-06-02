@@ -15,29 +15,31 @@
     "window": {
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTitleText": "囍cafe",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
+        "color": "#C93931",
+        "selectedColor":"#C93931",
         "list": [
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
                 "iconPath": "./images/icon/index.png",
-                "selectedIconPath": "./images/icon/index_aictive.png"
+                "selectedIconPath": "./images/icon/index_active.png"
             },
             {
                 "pagePath": "pages/myOrderList/myOrderList",
-                "text": "订单",
-                "iconPath": "./images/icon/car.png",
-                "selectedIconPath": "./images/icon/car_aictive.png"
+                "text": "取茶",
+                "iconPath": "./images/icon/tea.png",
+                "selectedIconPath": "./images/icon/tea_active.png"
             },
             {
                 "pagePath": "pages/myself/myself",
                 "text": "我的",
                 "iconPath": "./images/icon/me.png",
-                "selectedIconPath": "./images/icon/me_aictive.png"
+                "selectedIconPath": "./images/icon/me_active.png"
             }
         ]
     },

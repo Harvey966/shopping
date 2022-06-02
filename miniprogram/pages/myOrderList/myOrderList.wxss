@@ -51,10 +51,14 @@
   margin-top: 50rpx;
   align-items: center;
 }
+.order-list .list-container .order-item .content .goods-container {
+  display: flex;
+}
 .order-list .list-container .order-item .content .goods-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 10rpx;
 }
 .order-list .list-container .order-item .content .goods-item .icon {
   width: 110rpx;

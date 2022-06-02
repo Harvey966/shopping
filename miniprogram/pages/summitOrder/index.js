@@ -67,7 +67,18 @@ Component({
         order_time:new Date().format("yyyy-MM-dd hh:mm:ss")
       }
       app.globalData.user.bags=[]
-      console.log('app.globalData.user',app.globalData.user);
+      if(this.data.waysIndex==0)
+      {
+        await wx.requestSubscribeMessage({
+            tmplIds:['soSYRWp6na5sLqtUf9hKiaM_Re_kCDD_m8VDU_i7cCI','0sFxicuSgMthqpp59RSYUigE3wEkJ_CUyCVbRmiDRxI']
+        })
+      }
+      else {
+        await wx.requestSubscribeMessage({
+            tmplIds:['Os1nnL5EGJulquw3k3OcD1x3FX0kf86FbqzNcuHuGFE']
+        })
+      }
+
       await wx.cloud.callFunction({
           name:"updateUser",
           data: app.globalData.user
@@ -103,14 +114,16 @@ Component({
             type:1,
             id:newOrder._id
           }
-          if(this.data.ways_index==0){
+          if(this.data.waysIndex==0){
             let catchRes= await wx.cloud.callFunction({
                 name:'getCatchNum'
             })
+            
             let catch_num = catchRes.result
             data.catch_num=catch_num
+            console.log("catch_num",catch_num);
           }
-          wx.cloud.callFunction({
+          await wx.cloud.callFunction({
             name:"changeOrder",
             data,
         })

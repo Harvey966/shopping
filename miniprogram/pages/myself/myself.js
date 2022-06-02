@@ -38,7 +38,7 @@ Component({
     },
     toOrderManage(){
       wx.navigateTo({
-        url: '../orderManage/orderManage',
+        url: '../admin/orderManage/orderManage',
       })
     }
   }
