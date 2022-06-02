@@ -1,0 +1,94 @@
+.order-list{
+    height: 100%;
+    background-color: #F7F7F7;
+    min-height: 100vh;
+    font-size: 35rpx;
+    .nav-container{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #ccc;
+        position: sticky;
+        top: 0rpx;
+        padding-top: 20rpx;
+        height: 80rpx;
+        z-index: 10;
+        background-color: #FFFFFF;
+        .nav-item{
+            padding-bottom: 30rpx;
+            color: #6E6E6E;
+          }
+          .orangeStyle{
+            color:#EB3C28;
+            border-bottom: 2px solid #EB3C28;
+          }
+    }
+    .list-container{
+        .order-item{
+            padding: 20rpx;
+            margin: 20rpx;
+            border-radius: 10rpx;
+            background-color: #fff;
+            position: relative;
+            .header{
+                display: flex;
+                justify-content: space-between;
+                .status{
+                    color: #D16860;
+                }
+                .ways{
+                    border: 1px solid #DDA8A0;
+                    color: #FFFFFA;
+                    background-color: #E73B2C;
+                    font-size: 30rpx;
+                    padding: 3rpx 8rpx;
+                    border-radius: 10rpx;
+                }
+              }
+            .content{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50rpx;
+                align-items: center;
+                .goods-item{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .icon{
+                        width: 110rpx;
+                        height: 110rpx;
+                        border-radius: 10rpx;
+                    }
+                    .title{
+                        margin-top: 5rpx;
+                        font-size: 26rpx;
+                        color: #A2A2A2;
+                    }
+                }
+                .catch{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .catch-num{
+                        margin-top: 10rpx;
+                        font-size: 55rpx;
+                        font-weight: 600;
+                    }
+                    .catch-num-word{
+                        font-size: 30rpx;
+                        font-weight: 300;
+                    }
+                }
+                .price{
+                    .total{
+                        font-weight: 500;
+                    }
+                    .count{
+                        margin-top: 5rpx;
+                        font-size: 26rpx;
+                        color: #A2A2A2;
+                    }
+                }
+              }
+          }
+    }
+  }

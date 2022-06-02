@@ -21,10 +21,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        console.log(options.id);
+        console.log(options);
         this.fetchData(options.id)
     },
     async fetchData(id){
+        wx.showLoading()
         let res = await wx.cloud.callFunction({
             name:"getOrder",
             data:{
@@ -32,7 +33,7 @@ Page({
             }
         })
         console.log('res.result',res.result);
-        this.setData({
+        await this.setData({
             order:res.result,
             goodsList:res.result.goods,
             total_price:res.result.total_price,
@@ -42,6 +43,7 @@ Page({
             waysIndex:res.result.ways_index,
             id,
         })
+        wx.hideLoading()
     },
     async cancelOrder(){
         wx.showLoading()

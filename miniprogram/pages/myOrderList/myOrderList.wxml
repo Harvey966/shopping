@@ -1,7 +1,7 @@
 <view class="order-list">
   <view class="nav-container" >
     <view 
-      class="nav-item {{type===index?'orangeStyle':''}}" 
+      class="nav-item {{typeIndex===index?'orangeStyle':''}}" 
       bindtap="changeType" 
       wx:for="{{mapType}}"
       wx:key="{{index+item}}"
@@ -11,19 +11,30 @@
     </view>
   </view>
   <view class="list-container">
-    <view class="order-item" wx:for="{{dataList}}">
+    <view class="order-item" wx:for="{{dataList}}" wx:key="{{item.id}}" bindtap="clickOrder" data-id="{{item._id}}">
       <view class="header"  >
-        <view class="time">{{item.order_time}}</view>
-        <view class="status">{{mapType[type]}}</view>
+        <view class="ways">{{item.ways_index=='1'?'外卖':'堂食'}}</view>
+        <view class="status">{{item.ways_index==1&&item.type==2?'送货中':statusMap[item.type]}}</view>
       </view>
       <view class="content"  >
-        <image src="{{item.good.images[0]}}" class="icon"></image>
-        <view class="title">{{item.good.title}}</view>
+        <view class="goods-item" wx:for="{{item.goods}}" wx:for-item="goods_item" wx:for-index="goods_index"
+        wx:key="goods_index">
+            <image src="{{goods_item.images}}" class="icon"></image>
+            <view class="title">{{goods_item.title}}</view>
+        </view>
+        <view wx:if="{{item.ways_index=='0'&&item.type<3}}"  class="catch">
+            <view class="catch-num">
+                {{item.catch_num}}
+            </view>
+            <view class="catch-num-word">
+                取单号
+            </view>
+        </view>
         <view class="price" >
-          <view class="money">{{item.good.now_price}}*{{item.count}}</view>
-          <view class="total">总价:{{item.total_money}}</view>
-          <button wx:if="{{type===0}}" class="pay" data-id="{{item._id}}" bindtap="toOrderForm">付款</button></view>
+          <view class="total">¥ {{item.total_price}}</view>
+          <view class="count">共{{item.goods.length}}件</view>
         </view>
     </view>
   </view>
+</view>
 </view>

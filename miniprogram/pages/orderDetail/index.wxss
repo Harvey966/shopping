@@ -14,6 +14,10 @@
   font-weight: 500;
   font-size: 35rpx;
 }
+.summit-order .order-container .wait {
+  font-size: 30rpx;
+  font-weight: 300;
+}
 .summit-order .order-container .catch-num {
   margin-top: 10rpx;
   font-size: 55rpx;

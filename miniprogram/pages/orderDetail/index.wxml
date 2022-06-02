@@ -9,6 +9,7 @@
         <view wx:if="{{type===1&&waysIndex=='0'}}" class="catch-num-word">
             取单号
         </view>
+        <view wx:if="{{waysIndex=='1'}}" class="wait">{{type==1?'请等候商家备餐':type==2?'骑手正在送餐路上...':''}}</view>
         <view wx:if="{{type==0}}" class="button-container">
             <button bindtap="cancelOrder">取消订单</button>
             <button bindtap="payOrder">立即支付</button>

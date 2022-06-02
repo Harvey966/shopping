@@ -99,17 +99,20 @@ Component({
         console.log("支付失败",err);
       })
       if(res2?.errMsg==="requestPayment:ok"){
-          let catchRes= await wx.cloud.callFunction({
-              name:'getCatchNum'
-          })
-          let catch_num = catchRes.result
+          let data = {
+            type:1,
+            id:newOrder._id
+          }
+          if(this.data.ways_index==0){
+            let catchRes= await wx.cloud.callFunction({
+                name:'getCatchNum'
+            })
+            let catch_num = catchRes.result
+            data.catch_num=catch_num
+          }
           wx.cloud.callFunction({
             name:"changeOrder",
-            data:{
-                type:1,
-                catch_num:catch_num,
-                id:newOrder._id
-            }
+            data,
         })
       }
       else{

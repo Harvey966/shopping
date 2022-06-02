@@ -49,6 +49,20 @@
                     "query": "id=8f75309d62961d58065f919c437db0a7",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/orderDetail/index",
+                    "query": "id=8f75309d6297fd410699805479260432",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/myOrderList/myOrderList",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
