@@ -16,7 +16,10 @@ exports.main = async (event, context) => {
     else if(event.type===0){
         res=  await db.collection('order')
         .where({
-          type:_.lt(3)
+          type:_.lt(3),
+          userInfo:{
+              openId:cloud.getWXContext().OPENID
+          }
         })
         .get()
     }
@@ -24,7 +27,10 @@ exports.main = async (event, context) => {
     else {
         res = await db.collection('order')
         .where({
-          type:_.gt(2)
+          type:_.gt(2),
+          userInfo:{
+            openId:cloud.getWXContext().OPENID
+        }
         })
         .get()      
     }

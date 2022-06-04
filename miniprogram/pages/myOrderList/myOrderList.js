@@ -25,8 +25,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onLoad(){
-      this.fetchData(0)
+    onShow(){
+        this.fetchData(this.data.typeIndex)
     },
     changeType(event){
       this.setData({

@@ -37,6 +37,10 @@
 .order-list .list-container .order-item .header .status {
   color: #D16860;
 }
+.order-list .list-container .order-item .header .time {
+  color: #959595;
+  font-size: 25rpx;
+}
 .order-list .list-container .order-item .header .ways {
   border: 1px solid #DDA8A0;
   color: #FFFFFA;

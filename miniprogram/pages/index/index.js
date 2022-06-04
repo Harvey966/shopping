@@ -1,4 +1,3 @@
-// const {class_list,goodsList} =require('./config')
 
 //index.js
 const app = getApp()
@@ -23,7 +22,12 @@ Page({
     // 购物袋弹窗
     showBags:false,
     // 购物袋列表弹窗
-    showBagsList:false
+    showBagsList:false,
+
+    // 自取还是外卖
+    ways_index:0,
+
+    onTime:true,
   },
    
   async onLoad(){
@@ -31,19 +35,48 @@ Page({
     this.onLoadLogin()
   },
   async onShow(){
-      let res1 = await wx.cloud.callFunction({
-          name:'getClassList'
-      })
-      let res2 = await wx.cloud.callFunction({
-      name:"getAllGoods"
-    })
-    console.log(res1.result[0]);
-    this.setData({
-        class_list: res1.result[0].class_list,
-        goodsList: res2.result,
-    })
+    await this.fetchData()
+    this.getBuinessTime()
     this.checkBags()
     this.getAllTop()
+  },
+  async getBuinessTime(){
+    let res=await wx.cloud.callFunction({
+        name:"getBuinessTime"
+    })
+    console.log(res);
+    let date = new Date();
+    let now = date.getHours() * 100 + date.getMinutes();
+    let {start,end}=res.result
+    let flag=false
+    if(now>=start&&now<=end)flag=true
+    await this.setData({
+        onTime:flag
+    })
+    let startH=start/100
+    let startM=start%100>10?start%100:'0'+start%100
+    let endH=end/100
+    let endM=end%100>10?end%100:'0'+end%100
+    
+    if(!flag){
+        wx.showModal({
+          title: '店家休息中',
+          content:`营业时间：${startH}:${startM} - ${endH}:${endM}`
+        })
+    }
+  },
+  async fetchData(){
+    let res1 = await wx.cloud.callFunction({
+        name:'getClassList'
+    })
+    let res2 = await wx.cloud.callFunction({
+    name:"getAllGoods"
+  })
+  console.log(res1.result[0]);
+  this.setData({
+      class_list: res1.result[0].class_list,
+      goodsList: res2.result,
+  })
   },
   // 检查购物袋是否为空
   checkBags(){
@@ -158,6 +191,7 @@ Page({
 
   // 关闭商品弹窗展示
   hideModal(){
+      if(this.data.onTime)return
     this.setData({
         showModal:false,
         showBagsList:false
@@ -174,5 +208,40 @@ Page({
       this.setData({
         showBagsList:true
       })
-  }
+  },
+  async clickWaysRight(){
+      if(this.data.ways_index==0){
+          let res=await wx.showModal({
+            content: '是否切换到外卖商品？',
+          })
+          if(res.confirm){
+            await this.setData({
+                ways_index:1
+            })
+            wx.showLoading({
+                title: '...',
+              })
+            await this.fetchData()
+            wx.hideLoading()
+          }
+      }
+      
+  },
+  async clickWaysleft(){
+    if(this.data.ways_index==1){
+        let res=await wx.showModal({
+          content: '是否切换到店内自取商品？',
+        })
+        if(res.confirm){
+          await this.setData({
+              ways_index:0
+          })
+          wx.showLoading({
+            title: '...',
+          })
+          await this.fetchData()
+          wx.hideLoading()
+        }
+    }
+}
 })

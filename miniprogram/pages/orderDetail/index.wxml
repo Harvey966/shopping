@@ -3,10 +3,10 @@
         <view class="title">
             {{type===0?'待支付':type==1?'备餐中':type==2?waysIndex==='0'?'请取餐':'送货中':type===3?'已完成':'已关闭'}}
         </view>
-        <view wx:if="{{type===1&&waysIndex=='0'}}" class="catch-num">
+        <view wx:if="{{type>=1&&type<=2&&waysIndex=='0'}}" class="catch-num">
             {{order.catch_num}}
         </view>
-        <view wx:if="{{type===1&&waysIndex=='0'}}" class="catch-num-word">
+        <view wx:if="{{type>=1&&type<=2&&waysIndex=='0'}}" class="catch-num-word">
             取单号
         </view>
         <view wx:if="{{waysIndex=='1'}}" class="wait">{{type==1?'请等候商家备餐':type==2?'骑手正在送餐路上...':''}}</view>
@@ -49,7 +49,7 @@
         </view>
         <view wx:if="{{waysIndex==0}}" class="phone box" >
             <view class="title" >预留电话</view>
-            <view class="detail"><input type="text" disabled="true" value="{{delivery_address.phone}}" placeholder="请填入手机号"/></view>
+            <view class="detail"><input type="text" disabled="true" value="{{order.phone?order.phone:delivery_address.phone}}" /></view>
         </view>
         <view class="way box">
             <view class="title">就餐方式*</view>
@@ -65,7 +65,7 @@
             </picker>
         </view>
         <view class="box">
-            <view class="title" >创建时间</view>
+            <view class="title" >下单时间</view>
             <view class="detail">{{order.order_time}}</view>
         </view>
     </view>

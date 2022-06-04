@@ -15,7 +15,7 @@ Component({
   data: {
     typeIndex:0,
     type:0,
-    mapType:["店内","外卖","派送中","请取餐",'已完成'],
+    mapType:["堂食","外卖","派送中","请取餐",'已完成'],
     statusMap:['待支付','备餐中','请取餐','已完成','已关闭'],
     waysIndex:1,
     dataList:[]
@@ -44,12 +44,32 @@ Component({
             typeIndex:typeIndex,
           }
       })
-      let data = res.result.concat().reverse()
+      let data
+      if(typeIndex==4)
+      data=res.result.concat().reverse()
+      else{
+        data=res.result
+        this.sortData(data)
+      }
       console.log("获取的数据",data);
+      
       await this.setData({
         dataList:data
       })
       wx.hideLoading()
+    },
+    // 对data根据付款时间进行排序
+    sortData(data){
+        data.forEach((v) => {
+            v.pay_time = new Date(v.pay_time).getTime();
+          });
+          console.log(data);
+          data.sort((a, b) => {
+            return a.pay_time - b.pay_time;
+          });
+          data.forEach((v) => {
+            v.pay_time = new Date(v.pay_time).format("yyyy-MM-dd hh:mm:ss");
+          });
     },
     async clickOrder(option){
         console.log('option',option);

@@ -5,6 +5,9 @@ Component({
   properties: {
     good:{
         type:Object
+    },
+    ways_index:{
+        type:Number
     }
   },
 
@@ -24,7 +27,7 @@ Component({
           shorthand,
           count:this.data.count,
           checked:1,
-          ways_index:this.properties.good.ways_index
+          ways_index:this.properties.ways_index
       }
       // 全局加购物袋商品
       app.globalData.user.bags.push(bag)

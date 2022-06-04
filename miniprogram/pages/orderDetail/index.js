@@ -86,7 +86,8 @@ Page({
             data:{
                 type:1,
                 catch_num:catch_num,
-                id:this.data.id
+                id:this.data.id,
+                pay_time:new Date().format("yyyy-MM-dd hh:mm:ss")
             }
           })
           await this.fetchData(this.data.id)

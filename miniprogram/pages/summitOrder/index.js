@@ -15,11 +15,12 @@ Component({
    */
   data: {
     ways:['门店就餐','送餐上门'],
-    waysIndex:1,
+    waysIndex:0,
     goodsList:[],
     total_price:0,
     note:'',
-    delivery_address:{}
+    delivery_address:{},
+    phone:''
   },
 
   /**
@@ -69,6 +70,7 @@ Component({
       app.globalData.user.bags=[]
       if(this.data.waysIndex==0)
       {
+        order.phone=this.data.phone
         await wx.requestSubscribeMessage({
             tmplIds:['soSYRWp6na5sLqtUf9hKiaM_Re_kCDD_m8VDU_i7cCI','0sFxicuSgMthqpp59RSYUigE3wEkJ_CUyCVbRmiDRxI']
         })
@@ -112,7 +114,8 @@ Component({
       if(res2?.errMsg==="requestPayment:ok"){
           let data = {
             type:1,
-            id:newOrder._id
+            id:newOrder._id,
+            pay_time:new Date().format("yyyy-MM-dd hh:mm:ss")
           }
           if(this.data.waysIndex==0){
             let catchRes= await wx.cloud.callFunction({
@@ -143,6 +146,23 @@ Component({
     navToAdress(){
         wx.navigateTo({
           url: '../address/address',
+        })
+    },
+    async getPhoneNumber(e){
+        let res=await wx.cloud.callFunction({
+            name:'getPhone',
+            data:{
+                code:e.detail.code
+            }
+        })
+        this.setData({
+            phone:res.result
+        })
+    },
+    changePhone(e){
+        console.log(e.detail.value);
+        this.setData({
+            phone:e.detail.value
         })
     }
   }

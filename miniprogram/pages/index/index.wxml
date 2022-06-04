@@ -1,6 +1,15 @@
 <!--index.wxml-->
 <view class="view-container">
-  <view class="header"></view>
+  <view class="header">
+    <view class="title-container">
+        <view class="title">囍cafe</view>
+        <view class="detail">一家专注咖啡的店铺</view>
+    </view>
+    <view class="ways-container">
+        <view class="box {{ways_index==0?'active':''}}" bindtap="clickWaysleft">自取</view>
+        <view class="box {{ways_index==1?'active':''}}" bindtap="clickWaysRight">外卖</view>
+    </view>
+  </view>
   <view class="main">
     <view class="nav">
       <view  
@@ -53,6 +62,7 @@
   bind:hideModal="hideModal"
   bind:checkBags="checkBags"
   good="{{selectGood}}"
+  ways_index="{{ways_index}}"
   wx:if="{{showModal}}"
   ></goods-detailed>
 </view>
@@ -61,8 +71,8 @@ wx:if="{{showBags}}"
 showBagsList="{{showBagsList}}" bind:openBagsList="openBagsList"
 bind:checkBags="checkBags"
 ></shopping-bag>
-<view 
-  wx:if="{{showModal || showBagsList}}" 
+<view
+  wx:if="{{showModal || showBagsList || !onTime}}" 
   class="mask" 
   bindtap="hideModal"
 ></view>

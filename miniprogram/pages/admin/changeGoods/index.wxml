@@ -32,18 +32,6 @@
                 <view class="picker">{{class_index===-1?"请选择":class_list[class_index].title}}</view>
     </picker>
   </view>
-  <view class="ways box">
-    <view class="title">就餐方式：</view>
-    <picker
-                class="detail"
-                mode="selector"
-                range="{{ways}}"
-                value="{{ways_index}}"
-                bindchange="waysChange"
-            >
-                <view class="picker">{{ways_index===-1?"请选择":ways[ways_index]}}</view>
-    </picker>
-  </view>
   <view class="attr box">
     <view class="title">属性：</view>
     <view class="add-attr">

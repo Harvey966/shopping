@@ -23,8 +23,6 @@ Component({
     class:-1,
     class_list:[],
     attr_detail:[],
-    ways:['门店就餐','送餐上门'],
-    ways_index:-1,
     class_index:-1
   },
 
@@ -49,6 +47,12 @@ Component({
         let res= await db.collection("goods").doc(option.id).get()
         let data = res.data
         console.log("获取的data",res);
+        let class_index=-1
+        this.data.class_list.forEach((v,index)=>{
+            if(v.class_id===data.class){
+                class_index=index
+            }
+        })
         this.setData({
             data,
           type:option.type,
@@ -59,6 +63,7 @@ Component({
           class:data.class,
           class_sort_num:data.class_sort_num,
           attr_detail:data.attr_detail,
+          class_index:class_index
         })
       }
     },
@@ -66,7 +71,7 @@ Component({
         const index = e.target.dataset.index
         const str=e.detail.value
         let attr_detail = JSON.parse(JSON.stringify(this.data.attr_detail))
-        attr_detail[index].list = str.split(',')
+        attr_detail[index].list = str.split(/[,，]/g)
         this.setData({
             attr_detail,
         })
@@ -125,12 +130,6 @@ Component({
             class_index:e.detail.value
         })
     },
-    waysChange(e){
-        console.log();
-        this.setData({
-            ways_index:e.detail.value
-        })
-    },
     // 上传新图片
     chooseImage(){
         wx.chooseImage({
@@ -169,7 +168,7 @@ Component({
       wx.showLoading({
         title: '',
       })
-      if(this.data.class==-1 || this.data.title==='' || this.data.price==='' || this.data.images.length===0 || this.data.ways_index===-1){
+      if(this.data.class==-1 || this.data.title==='' || this.data.price==='' || this.data.images.length===0){
           wx.showToast({
             title: '数据不完整',
             icon:'error'
@@ -184,7 +183,6 @@ Component({
         class:this.data.class,
         class_sort_num:new Date().getTime(),
         attr_detail:this.data.attr_detail,
-        ways_index:this.data.ways_index,
       }
       console.log('data',data);
       let res= await db.collection("goods").add(

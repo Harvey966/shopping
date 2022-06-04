@@ -58,8 +58,23 @@
 .summit-order .user-info .phone .title {
   font-size: 28rpx;
 }
+.summit-order .user-info .phone .detail {
+  display: flex;
+  align-items: center;
+}
 .summit-order .user-info .phone .detail input {
-  width: 240rpx;
+  width: 220rpx;
+  font-size: 28rpx;
+}
+.summit-order .user-info .phone .detail button {
+  margin: 0;
+  background-color: #FFFFFF;
+  color: #CF4C48;
+  border-radius: 10px;
+  border: 1px solid #CF4C48;
+  width: 150rpx;
+  font-size: 25rpx;
+  padding: 0;
 }
 .summit-order .user-info .way {
   display: flex;

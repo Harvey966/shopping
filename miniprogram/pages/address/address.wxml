@@ -1,6 +1,9 @@
 
 <view class="address-container">
-    <view class="select" bindtap="select">{{address?address+address_name:'选择收货地址 >'}}</view>
+    <view class="select" bindtap="select">
+        <image src="../../images/myself/address.png" class="icon"></image>
+        {{address?address+address_name+' >':'选择收货地址 >'}}
+    </view>
   <view class="container">
     <view class="left">详细地址</view>
     <input placeholder="{{address.detail?address.detail:'详细地址：例1号楼105'}}" model:value="{{detail}}" />

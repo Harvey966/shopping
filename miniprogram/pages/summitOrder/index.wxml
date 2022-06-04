@@ -12,7 +12,11 @@
         </view>
         <view wx:if="{{waysIndex==0}}" class="phone box" >
             <view class="title" >预留电话</view>
-            <view class="detail"><input type="text" value="{{delivery_address.phone?delivery_address.phone:''}}" placeholder="请填入手机号"/></view>
+            <view class="detail"><input type="text" value="{{phone?phone:''}}" placeholder="请填入手机号"
+            bindinput="changePhone"
+            />
+                <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">自动填写</button>
+            </view>
         </view>
         <view class="way box">
             <view class="title">就餐方式*</view>

@@ -45,28 +45,14 @@
                 },
                 {
                     "name": "",
-                    "pathName": "pages/orderDetail/index",
-                    "query": "id=8f75309d62961d58065f919c437db0a7",
+                    "pathName": "pages/summitOrder/index",
+                    "query": "0=undefined&bags=0&way_index=",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
                     "name": "",
-                    "pathName": "pages/orderDetail/index",
-                    "query": "id=8f75309d6297fd410699805479260432",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/admin/orderManage/orderManage",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/myOrderList/myOrderList",
+                    "pathName": "pages/myself/myself",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

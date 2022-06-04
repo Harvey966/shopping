@@ -1,21 +1,41 @@
 
-<view class="myself">
+<view class="main">
+    <view class="myself">
   <open-data class="user-img" type="userAvatarUrl"></open-data>
   <open-data class="user-name" type="userNickName"></open-data>
 </view>
 
-<view class="order" bindtap="changeAddress">
-  <view class="address">
-    <view class="left">修改收货地址</view>
+<view class="order">
+  <view class="address box"  bindtap="changeAddress">
+    <view class="left">
+        <image src="../../images/myself/address.png" class="icon"></image>
+        <view class="title">我的收货地址</view>
+    </view>
     <view class="right">></view>
   </view>
-  <view class="order-manage" bindtap="toOrderManage" wx:if="{{vip}}">
+  <view class="phone box" bindtap="call">
+    <view class="left">
+        <image src="../../images/myself/phone.png" class="icon"></image>
+        <view class="title">联系商家</view>
+    </view>
+    <view class="right">></view>
+  </view>
+  
+</view>
+<view class="order"  wx:if="{{vip}}">
+<view class="title">后台管理：</view>
+    <view class="order-manage box" bindtap="toOrderManage">
     <view class="left">管理订单</view>
     <view class="right">></view>
   </view>
-  <view class="good-manage" bindtap="toGoodManage" wx:if="{{vip}}">
+  <view class="good-manage box" bindtap="toGoodManage">
     <view class="left">管理商品</view>
     <view class="right">></view>
   </view>
+  <view class="time-manage box" bindtap="setBuinessTime" wx:if="{{vip}}">
+    <view class="left">设置营业时间</view>
+    <view class="right">></view>
+  </view>
+</view>
 </view>
 

@@ -40,6 +40,27 @@ Component({
       wx.navigateTo({
         url: '../admin/orderManage/orderManage',
       })
+    },
+    call(){
+        wx.makePhoneCall({
+            phoneNumber: '13702687728'
+          })
+    },
+    async setBuinessTime(){
+        let res=await wx.showModal({
+            title:'设置营业时间',
+          editable:true,
+          placeholderText:'例如：8:00-18:00'
+        })
+        if(res.confirm){
+            console.log(res.content);
+            await wx.cloud.callFunction({
+                name:'setBuinessTime',
+                data:{
+                    time:res.content
+                }
+            })
+        }
     }
   }
 })
